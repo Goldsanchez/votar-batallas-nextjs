@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from 'react'
 import { getCompetitions, getSeasons, getGroups, getFreestylers, getTokens  } from "../api/battles.api"
 
 
-export default function createBattle() {
+export default function CreateBattle() {
 
   const [competition, setCompetition] = useState<any[]>([])
   const [season, setSeason] = useState<any[]>([])
@@ -117,7 +117,7 @@ export default function createBattle() {
           </div>
         </div>
         <div className="mb-10 flex justify-center">
-        <input ref={winnerReplicaRef} rows="3" className='border rounded-md w-40 text-center text-xs mt-1' type='search' placeholder='Ganador Replica' list="winnerReplica" name="winner_replica" id="winner_replica"/>
+        <input ref={winnerReplicaRef} className='border rounded-md w-40 text-center text-xs mt-1' type='search' placeholder='Ganador Replica' list="winnerReplica" name="winner_replica" id="winner_replica"/>
             <datalist  className='bg-amber-300 max-h-40 overflow-y-scroll' id="winnerReplica">
             {freestyler?.map((item) => <option key={item.id} value={item.aka} />)}
             </datalist>

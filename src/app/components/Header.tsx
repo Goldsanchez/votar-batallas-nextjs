@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import axios from 'axios';
 import Link from 'next/link';
 
-export default function header() {
+export default function Header() {
 
   const [isAuth, setIsAuth] = useState(false)
 
@@ -15,7 +15,7 @@ export default function header() {
   const logout = () => {
 
     const token = localStorage.getItem('token');
-    axios.post(`http://127.0.0.1:8000/api/logout/?token=${token}`)
+    axios.post(`https://votar-batallas-freestyle-django.onrender.com/api/logout/?token=${token}`)
     .then(function (response) {
       localStorage.removeItem('token');
       setIsAuth(false)
@@ -27,8 +27,6 @@ export default function header() {
       // always executed
     }); 
 }
-
-
 
   return (
     <header className="border-b-white-500 flex h-16 flex-row items-center justify-between border-b-2 bg-white px-5 py-2 rounded-lg">
