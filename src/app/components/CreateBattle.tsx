@@ -45,7 +45,7 @@ export default function createBattle() {
   const winnerReplicaRef = useRef()
 
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e:any) => {
     e.preventDefault()
 
     const data =     {
