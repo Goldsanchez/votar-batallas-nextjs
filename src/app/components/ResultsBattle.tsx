@@ -9,7 +9,7 @@ export default function ResultsBattle() {
   const [start, setStart] = useState(0)
   const [end, setEnd] = useState(6)
   const tokenLocal = localStorage.getItem('token');
-  const user = token?.filter(item => item.key === tokenLocal).map(x => x.user)[0]
+  const user = token?.filter((item:any) => item.key === tokenLocal).map((x:any) => x.user)[0]
 
   useEffect(() => {
 
@@ -33,7 +33,7 @@ export default function ResultsBattle() {
   
   const nextClick = () => {
 
-    if (end >= battles.filter(battle => battle.judge.id === user).length) return
+    if (end >= battles.filter((battle:any) => battle.judge.id === user).length) return
     setStart(start + 6)
     setEnd(end + 6)
   }
@@ -45,7 +45,7 @@ export default function ResultsBattle() {
         <p className="text-xs font-light">* Ganador por replica</p>
       </div>
 
-      {battles.filter(battle => battle.judge.id === user).map((battle: any) => <OneResultBattle
+      {battles.filter((battle:any) => battle.judge.id === user).map((battle: any) => <OneResultBattle
         competition={battle.competition.name}
         freestyler1={battle.freestyler_1.aka}
         freestyler2={battle.freestyler_2.aka}

@@ -28,18 +28,18 @@ export default function LeaderBoard() {
   }, [])
 
   const tokenLocal = localStorage.getItem('token');
-  const user = token?.filter(item => item.key === tokenLocal).map(x => x.user)[0]
+  const user = token?.filter((item:any) => item.key === tokenLocal).map((x:any) => x.user)[0]
 
   return (
     <article className="LEADERBOARD flex basis-1/2 flex-col gap-5 rounded-lg bg-white px-5  pt-5">
       <div className="mb-5 flex flex-row items-center justify-around">
         <p className="text-center text-2xl">Tabla de Posiciones</p>
         <select onChange={(e)=>setFilterCompetition(e.target.value)} value={filterCompeticion} className="rounded-sm bg-zinc-200 px-3 py-1 w-44" name="paises" id="paises">
-        {competition?.map((item) => <option key={item.id}>{item.name}</option>)}
+        {competition?.map((item:any) => <option key={item.id}>{item.name}</option>)}
         </select>
       </div>
-      <LeaderBoardTable group="Grupo A" battles={battles.filter(match => match.group.name === "A" && match.competition.name === filterCompeticion && match.judge.id === user)} />
-      <LeaderBoardTable group="Grupo B" battles={battles.filter(match => match.group.name === "B" && match.competition.name === filterCompeticion && match.judge.id === user)} />
+      <LeaderBoardTable group="Grupo A" battles={battles.filter((match:any) => match.group.name === "A" && match.competition.name === filterCompeticion && match.judge.id === user)} />
+      <LeaderBoardTable group="Grupo B" battles={battles.filter((match:any) => match.group.name === "B" && match.competition.name === filterCompeticion && match.judge.id === user)} />
     </article>
   )
 }

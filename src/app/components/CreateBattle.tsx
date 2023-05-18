@@ -3,13 +3,14 @@ import axios from "axios"
 import { useEffect, useState, useRef } from 'react'
 import { getCompetitions, getSeasons, getGroups, getFreestylers, getTokens  } from "../api/battles.api"
 
+
 export default function createBattle() {
 
-  const [competition, setCompetition] = useState()
-  const [season, setSeason] = useState()
-  const [group, setGroup] = useState()
-  const [freestyler, setFreestyler] = useState()
-  const [token, setToken] = useState()
+  const [competition, setCompetition] = useState<any[]>([])
+  const [season, setSeason] = useState<any[]>([])
+  const [group, setGroup] = useState<any[]>([])
+  const [freestyler, setFreestyler] = useState<any[]>([])
+  const [token, setToken] = useState<any[]>([])
 
   const tokenLocal = localStorage.getItem('token');
 
@@ -35,21 +36,32 @@ export default function createBattle() {
     
   }, [])
 
-  const competitionRef = useRef()
-  const seasonRef = useRef()
-  const groupRef = useRef()
-  const freestyler1Ref = useRef()
-  const freestyler2Ref = useRef()
-  const score1Ref = useRef()
-  const score2Ref = useRef()
-  const winnerReplicaRef = useRef()
+  const competitionRef:any = useRef()
+  const seasonRef:any = useRef()
+  const groupRef:any = useRef()
+  const freestyler1Ref:any = useRef()
+  const freestyler2Ref:any = useRef()
+  const score1Ref:any = useRef()
+  const score2Ref:any = useRef()
+  const winnerReplicaRef:any = useRef()
 
+  type typeData = {
+    judge:string,
+    competition:string,
+    season:string,
+    group:string,
+    freestyler_1:string,
+    freestyler_2:string,
+    score_freestyler_1:number,
+    score_freestyler_2:number,
+    winner_replica:string
+  }
 
   const handleSubmit = async (e:any) => {
     e.preventDefault()
 
-    const data =     {
-      "judge": token?.filter(item => item.key === tokenLocal).map(x => x.user)[0],
+    const data: typeData = {
+      "judge": token?.filter((item:any) => item.key === tokenLocal).map(x => x.user)[0],
       "competition": competition?.filter(item => item.name == competitionRef.current.value).map(x => x.id)[0],
       "season": season?.filter(item => item.name == seasonRef.current.value).map(x => x.id)[0],
       "group": group?.filter(item => item.name == groupRef.current.value).map(x => x.id)[0],
