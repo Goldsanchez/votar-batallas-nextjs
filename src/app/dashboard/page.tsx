@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { getBattles } from "../api/battles.api"
 import Select from 'react-select'
 
-export default function page() {
+export default function Page() {
 
   const [battles, setBattles] = useState([])
 

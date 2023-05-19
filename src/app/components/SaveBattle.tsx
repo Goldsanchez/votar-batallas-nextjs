@@ -2,17 +2,21 @@
 import axios from "axios"
 import { useRef, useState, useEffect } from "react";
 import { getCompetitions, getSeasons, getGroups, getFreestylers, getTokens } from "../api/battles.api"
+import { ICompetition, ISeason, IGroup, IFreestyler, IToken } from "../interfacesApi";
+import { API_URL } from "../api/battles.api";
 
 export default function SaveBattle() {
 
   const [showModal, setShowModal] = useState(false);
 
   // variables para guardar lso datos del backen backend
-  const [competition, setCompetition] = useState()
-  const [season, setSeason] = useState()
-  const [group, setGroup] = useState()
-  const [freestyler, setFreestyler] = useState()
-  const [token, setToken] = useState()
+  const [competition, setCompetition] = useState<ICompetition[] | undefined>([])
+  const [season, setSeason] = useState<ISeason[] | undefined>([])
+  const [group, setGroup] = useState<IGroup[] | undefined>([])
+  const [freestyler, setFreestyler] = useState<IFreestyler[] | undefined>([])
+  const [token, setToken] = useState<IToken[] | undefined>([])
+
+  const [prueba, setPrueba] = useState(0)
 
   // Guardar Batalla
   const [formatoTitle, setFormatoTitle] = useState("Incremental")
@@ -197,7 +201,7 @@ export default function SaveBattle() {
     "score_freestyler_2": resultadoFinalMC2,
     "winner_replica": replicaTotalMC1 > replicaTotalMC2
       ? freestyler?.filter(item => item.aka == nameMC1).map(x => x.id)[0]
-      : replicaTotalMC1 < replicaTotalMC2 ? freestyler?.filter(item => item.aka == nameMC2).map(x => x.id)[0] : "Sin Replica",
+      : replicaTotalMC1 < replicaTotalMC2 ? freestyler?.filter(item => item.aka == nameMC2).map(x => x.id)[0] : 13,
 
     "incremental1MC1": Number(incremental1MC1),
     "incremental2MC1": Number(incremental2MC1),
@@ -364,13 +368,15 @@ export default function SaveBattle() {
 
     setShowModal(false)
 
-    axios.post('http://localhost:8000/api/battles/', data)
+    axios.post(`${API_URL}battles/`, data)
       .then(function (response) {
         console.log(response);
       })
       .catch(function (error) {
         console.log(error);
       });
+
+      console.log(data);
   }
 
   useEffect(() => { // Datos API

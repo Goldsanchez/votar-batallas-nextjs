@@ -1,8 +1,9 @@
 'use client'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { API_URL } from '../api/battles.api';
 
-export default function page() {
+export default function Login() {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -17,7 +18,7 @@ export default function page() {
       password: password
     };
 
-    const { data } = await axios.post('https://votar-batallas-freestyle-django.onrender.com/api/login/', user, { headers: { 'Content-Type': 'application/json' } })   
+    const { data } = await axios.post(`${API_URL}login/`, user, { headers: { 'Content-Type': 'application/json' } })   
     localStorage.clear();
     localStorage.setItem('token', data.token);
     window.location.href = '/'

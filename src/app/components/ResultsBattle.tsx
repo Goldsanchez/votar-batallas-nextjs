@@ -45,7 +45,7 @@ export default function ResultsBattle() {
         <p className="text-xs font-light">* Ganador por replica</p>
       </div>
 
-      {battles.filter((battle:any) => battle.judge.id === user).map((battle: any) => <OneResultBattle
+      {battles.filter((battle:any) => battle.judge.id === user).map((battle: any) => <OneResultBattle key={battle.id}
         competition={battle.competition.name}
         freestyler1={battle.freestyler_1.aka}
         freestyler2={battle.freestyler_2.aka}

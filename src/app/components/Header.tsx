@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import axios from 'axios';
 import Link from 'next/link';
+import { API_URL } from "../api/battles.api";
 
 export default function Header() {
 
@@ -15,7 +16,7 @@ export default function Header() {
   const logout = () => {
 
     const token = localStorage.getItem('token');
-    axios.post(`https://votar-batallas-freestyle-django.onrender.com/api/logout/?token=${token}`)
+    axios.post(`${API_URL}logout/?token=${token}`)
     .then(function (response) {
       localStorage.removeItem('token');
       setIsAuth(false)
