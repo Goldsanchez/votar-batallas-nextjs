@@ -1,7 +1,7 @@
 import { spawn } from 'child_process'
 import React from 'react'
 
-export default function OneResultBattle({competition, freestyler1, freestyler2, score1, score2, winner_replica}) {
+export default function OneResultBattle({competition, freestyler1, freestyler2, score1, score2, winner_replica}:any) {
 
   return (
     <div className="result flex items-center justify-between border-b-2 border-violet-300 h-[69px]">

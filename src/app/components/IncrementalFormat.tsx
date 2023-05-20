@@ -1,6 +1,6 @@
 
 
-export function IncrementalFormat({incrementalObjectMC1, incrementalObjectMC2, incrementalFormat, handleIncrementalMC1Change, handleIncrementalMC2Change, nameMC1, nameMC2}) {
+export function IncrementalFormat({incrementalObjectMC1, incrementalObjectMC2, incrementalFormat, handleIncrementalMC1Change, handleIncrementalMC2Change, nameMC1, nameMC2}:any) {
   return (
 <>
 {incrementalFormat && <form className="tablero flex items-end gap-10 mb-[44px]">
@@ -42,8 +42,8 @@ export function IncrementalFormat({incrementalObjectMC1, incrementalObjectMC2, i
       </div>
       <div className="flex flex-col items-center gap-1 ml-5">
         <p className="font-semibold">Total</p>
-        <input className="h-12 w-16 p-2 text-center font-medium text-2xl bg-violet-200" readOnly={true} value={Object.values(incrementalObjectMC1).reduce((a, b) => Number(a) + Number(b), 0)} type="number" />
-        <input className="h-12 w-16 p-2 text-center font-medium text-2xl bg-violet-200" readOnly={true} value={Object.values(incrementalObjectMC2).reduce((a, b) => Number(a) + Number(b), 0)} type="number" />
+        <input className="h-12 w-16 p-2 text-center font-medium text-2xl bg-violet-200"  value={Object.values(incrementalObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) as number} type="number" />
+        <input className="h-12 w-16 p-2 text-center font-medium text-2xl bg-violet-200"  value={Object.values(incrementalObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) as number} type="number" />
       </div>
     </div>
   </form>}

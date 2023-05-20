@@ -378,12 +378,12 @@ export default function SaveBattle() {
     "replicaTotalMC2": Object.values(replicaObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) || 0,
   }
 
-  const handleSubmit = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSubmit = async (e:any) => {
     e.preventDefault()
     setShowModal(true)
   }
 
-  const saveBattle = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const saveBattle = async (e: any) => {
     e.preventDefault()
     setShowModal(false)
 

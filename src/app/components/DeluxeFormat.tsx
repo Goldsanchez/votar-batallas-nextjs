@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function DeluxeFormat({ deluxeObjectMC1, deluxeObjectMC2, deluxeFormat, handleDeluxeMC1Change, handleDeluxeMC2Change, nameMC1, nameMC2 }) {
+export function DeluxeFormat({ deluxeObjectMC1, deluxeObjectMC2, deluxeFormat, handleDeluxeMC1Change, handleDeluxeMC2Change, nameMC1, nameMC2 }:any) {
   return (
     <>
       {deluxeFormat && <form className="tablero flex items-end gap-10 mb-[44px]">
@@ -48,8 +48,8 @@ export function DeluxeFormat({ deluxeObjectMC1, deluxeObjectMC2, deluxeFormat, h
           </div>
           <div className="flex flex-col items-center gap-1">
             <p className="font-semibold">Total</p>
-            <input className="h-12 w-16 p-2 text-center font-medium text-2xl bg-violet-200" value={Object.values(deluxeObjectMC1).reduce((a, b) => Number(a) + Number(b), 0)} type="number" />
-            <input className="h-12 w-16 p-2 text-center font-medium text-2xl bg-violet-200" value={Object.values(deluxeObjectMC2).reduce((a, b) => Number(a) + Number(b), 0)} type="number" />
+            <input className="h-12 w-16 p-2 text-center font-medium text-2xl bg-violet-200" value={Object.values(deluxeObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) as number} type="number" />
+            <input className="h-12 w-16 p-2 text-center font-medium text-2xl bg-violet-200" value={Object.values(deluxeObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) as number} type="number" />
           </div>
         </div>
       </form>}

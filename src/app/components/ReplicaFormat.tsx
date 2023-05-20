@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function ReplicaFormat({replicaObjectMC1, replicaObjectMC2, replicaFormat, handleReplicaMC1Change, handleReplicaMC2Change, nameMC1, nameMC2}) {
+export function ReplicaFormat({replicaObjectMC1, replicaObjectMC2, replicaFormat, handleReplicaMC1Change, handleReplicaMC2Change, nameMC1, nameMC2}:any) {
   return (
     <>
       {replicaFormat && <form className="tablero flex items-end gap-10 mb-[44px]">
@@ -42,8 +42,8 @@ export function ReplicaFormat({replicaObjectMC1, replicaObjectMC2, replicaFormat
           </div>
           <div className="flex flex-col items-center gap-1 ml-5">
             <p className="font-semibold">Total</p>
-            <input className="h-12 w-16 p-2 text-center font-medium text-2xl bg-violet-200" value={Object.values(replicaObjectMC2).reduce((a, b) => Number(a) + Number(b), 0)} type="number" />
-            <input className="h-12 w-16 p-2 text-center font-medium text-2xl bg-violet-200" value={Object.values(replicaObjectMC1).reduce((a, b) => Number(a) + Number(b), 0)} type="number" />
+            <input className="h-12 w-16 p-2 text-center font-medium text-2xl bg-violet-200" value={Object.values(replicaObjectMC2).reduce((a:number, b) => Number(a) + Number(b), 0) as number} />
+            <input className="h-12 w-16 p-2 text-center font-medium text-2xl bg-violet-200" value={Object.values(replicaObjectMC1).reduce((a:number, b) => Number(a) + Number(b), 0) as number} />
           </div>
         </div>
       </form>}

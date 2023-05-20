@@ -3,7 +3,7 @@ import { useState } from "react"
 
 
 export function GanadorFormat({ganadorFormat, incrementalObjectMC1, incrementalObjectMC2, randomObjectMC1, randomObjectMC2, minutoLibre1ObjectMC1, minutoLibre1ObjectMC2,
-  minutoLibre2ObjectMC1, minutoLibre2ObjectMC2, deluxeObjectMC1, deluxeObjectMC2, nameMC1, nameMC2, resultadoFinalMC1, resultadoFinalMC2}) {
+  minutoLibre2ObjectMC1, minutoLibre2ObjectMC2, deluxeObjectMC1, deluxeObjectMC2, nameMC1, nameMC2, resultadoFinalMC1, resultadoFinalMC2}:any) {
 
   
     return (
@@ -16,33 +16,33 @@ export function GanadorFormat({ganadorFormat, incrementalObjectMC1, incrementalO
           </div>
           <div className="flex flex-col items-center gap-1">
             <p className="font-medium">Incremental</p>
-            <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={Object.values(incrementalObjectMC1).reduce((a, b) => Number(a) + Number(b), 0)} type="number" />
-            <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={Object.values(incrementalObjectMC2).reduce((a, b) => Number(a) + Number(b), 0)} type="number" />
+            <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={Object.values(incrementalObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) as number} type="number" />
+            <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={Object.values(incrementalObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) as number} type="number" />
           </div>
           <div className="flex flex-col items-center gap-1">
             <p className="font-medium">Random</p>
-            <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={Object.values(randomObjectMC1).reduce((a, b) => Number(a) + Number(b), 0)} type="number" />
-            <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={Object.values(randomObjectMC2).reduce((a, b) => Number(a) + Number(b), 0)} type="number" />
+            <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={Object.values(randomObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) as number} type="number" />
+            <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={Object.values(randomObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) as number} type="number" />
           </div>
           <div className="flex flex-col items-center gap-1">
             <p className="font-medium">Sangre 1</p>
-            <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={Object.values(minutoLibre1ObjectMC1).reduce((a, b) => Number(a) + Number(b), 0)} type="number" />
-            <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={Object.values(minutoLibre1ObjectMC2).reduce((a, b) => Number(a) + Number(b), 0)} type="number" />
+            <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={Object.values(minutoLibre1ObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) as number} type="number" />
+            <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={Object.values(minutoLibre1ObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) as number} type="number" />
           </div>
           <div className="flex flex-col items-center gap-1">
             <p className="font-medium">Sangre 2</p>
-            <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={Object.values(minutoLibre2ObjectMC1).reduce((a, b) => Number(a) + Number(b), 0)} type="number" />
-            <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={Object.values(minutoLibre2ObjectMC2).reduce((a, b) => Number(a) + Number(b), 0)} type="number" />
+            <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={Object.values(minutoLibre2ObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) as number} type="number" />
+            <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={Object.values(minutoLibre2ObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) as number} type="number" />
           </div>
           <div className="flex flex-col items-center gap-1">
             <p className="font-medium">Deluxe</p>
-            <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={Object.values(deluxeObjectMC1).reduce((a, b) => Number(a) + Number(b), 0)} type="number" />
-            <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={Object.values(deluxeObjectMC2).reduce((a, b) => Number(a) + Number(b), 0)} type="number" />
+            <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={Object.values(deluxeObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) as number} type="number" />
+            <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={Object.values(deluxeObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) as number} type="number" />
           </div>
           <div className="flex flex-col items-center gap-1">
             <p className="font-semibold">Total</p>
-            <input className="h-12 w-16 p-2 ml-2 text-center font-medium text-2xl bg-violet-200" readOnly value={resultadoFinalMC1} type="number" />
-            <input className="h-12 w-16 p-2 ml-2 text-center font-medium text-2xl bg-violet-200" readOnly value={resultadoFinalMC2} type="number" />
+            <input className="h-12 w-16 p-2 ml-2 text-center font-medium text-2xl bg-violet-200" value={resultadoFinalMC1} type="number" />
+            <input className="h-12 w-16 p-2 ml-2 text-center font-medium text-2xl bg-violet-200" value={resultadoFinalMC2} type="number" />
           </div>
         </div>
         <div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function FreeMinutes1Format({minutoLibre1ObjectMC1, minutoLibre1ObjectMC2, freeMinutesFormat1, handleMinutoLibre1MC1Change, handleMinutoLibre1MC2Change, nameMC1, nameMC2, checkboxValuesMC2, handleCheckboxChangeMC2}) {
+export function FreeMinutes1Format({minutoLibre1ObjectMC1, minutoLibre1ObjectMC2, freeMinutesFormat1, handleMinutoLibre1MC1Change, handleMinutoLibre1MC2Change, nameMC1, nameMC2, checkboxValuesMC2, handleCheckboxChangeMC2}:any) {
   return (
     <>
             {freeMinutesFormat1 && <form className="tablero flex gap-10 mb-[20px]">
@@ -50,8 +50,8 @@ export function FreeMinutes1Format({minutoLibre1ObjectMC1, minutoLibre1ObjectMC2
             </div>
             <div className="flex flex-col items-center gap-1">
               <p className="font-semibold">Total</p>
-              <input className="h-12 w-16 p-2 text-center font-medium text-2xl bg-violet-200" value={Object.values(minutoLibre1ObjectMC1).reduce((a, b) => Number(a) + Number(b), 0)} type="number" />
-              <input className="h-12 w-16 p-2 text-center font-medium text-2xl bg-violet-200" value={Object.values(minutoLibre1ObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) + Object.values(checkboxValuesMC2).reduce((total, value) => total + (value ? 1 : 0), 0)} type="number" />
+              <input className="h-12 w-16 p-2 text-center font-medium text-2xl bg-violet-200" value={Object.values(minutoLibre1ObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) as number} type="number" />
+              <input className="h-12 w-16 p-2 text-center font-medium text-2xl bg-violet-200" value={Object.values(minutoLibre1ObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) as number + Object.values(checkboxValuesMC2).reduce((total:number, value) => total + (value ? 1 : 0), 0) as number} type="number" />
             </div>
           </div>
         </form>}

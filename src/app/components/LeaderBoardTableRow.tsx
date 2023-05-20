@@ -1,11 +1,18 @@
-import React, { useEffect } from 'react'
 
-export default function LeaderBoardTableRow({ battles }) {
+const LeaderboardComponent = ({  }) => {
+  return (
+    <>
+    </>
+  )
+}
 
-  const scores = {}
 
+export default function LeaderBoardTableRow({ battles }:any) {
+
+  const scores: { [k: string]: number } = {};
+  const ptbs: { [k: string]: number } = {};
  
-  battles?.map((match) => { // puntos
+  battles?.map((match:any) => { // puntos
     const { freestyler_1, freestyler_2, score_freestyler_1, score_freestyler_2, winner_replica} = match
 
     if (winner_replica.aka === "Sin Replica") {
@@ -47,9 +54,7 @@ export default function LeaderBoardTableRow({ battles }) {
     }
   })
 
-  const ptbs = {}
-
-  battles.map(match => { // ptb
+  battles.map((match:any) => { // ptb
     const { freestyler_1, freestyler_2, score_freestyler_1, score_freestyler_2} = match
 
         if (!ptbs[freestyler_1.aka]) {
@@ -80,15 +85,17 @@ export default function LeaderBoardTableRow({ battles }) {
       }
     });
 
+
   return (
     <>
-      {leaderBoardSorted.map( (item, id) => {
-        return <tr className="h-12 text-center" key={id}>
-          <td className="border-b border-violet-300">{id+1}</td>
+      {leaderBoardSorted.map((item, index) => {
+        return <tr className="h-12 text-center" key={index}>
+          <td  className="border-b border-violet-300">{index+1}</td>
           <td className="border-b border-violet-300">{item.name}</td>
           <td className="border-b border-violet-300">{item.ptb}</td>
           <td className="border-b border-violet-300">{item.puntos}</td>
         </tr>
+        
       })}
     </>
 
