@@ -16,6 +16,7 @@ import { GanadorFormat } from "./GanadorFormat";
 export default function SaveBattle() {
 
   const [showModal, setShowModal] = useState(false);
+  const [tokenLocal, setTokenLocal] = useState<string|null>();
 
   // variables para guardar lso datos del backen backend
   const [competition, setCompetition] = useState<ICompetition[] | undefined>([])
@@ -212,7 +213,10 @@ export default function SaveBattle() {
   const [resultadoFinalMC1, setResultadoFinalMC1] = useState(0)
   const [resultadoFinalMC2, setResultadoFinalMC2] = useState(0)
 
-  const tokenLocal = localStorage.getItem('token');
+
+  if (typeof window !== 'undefined') {
+    setTokenLocal(localStorage.getItem('token'));
+  }
 
   const data = {
     "judge": token?.filter(item => item.key === tokenLocal).map(x => x.user)[0],

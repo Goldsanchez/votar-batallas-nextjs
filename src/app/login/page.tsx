@@ -19,7 +19,7 @@ export default function Login() {
     };
 
     const { data } = await axios.post(`${API_URL}login/`, user, { headers: { 'Content-Type': 'application/json' } })   
-    localStorage.clear();
+    // localStorage.clear();
     localStorage.setItem('token', data.token);
     window.location.href = '/'
 

@@ -2,15 +2,19 @@ import { getBattles, getTokens } from "../api/battles.api"
 import { useEffect, useState } from "react"
 import OneResultBattle from "./OneResultBattle"
 
+
 export default function ResultsBattle() {
 
   const [battles, setBattles] = useState([])
   const [token, setToken] = useState([])
   const [start, setStart] = useState(0)
   const [end, setEnd] = useState(6)
-  const tokenLocal = localStorage.getItem('token');
+  const [tokenLocal, setTokenLocal] = useState<string>()
   const user = token?.filter((item:any) => item.key === tokenLocal).map((x:any) => x.user)[0]
 
+  if (typeof window !== 'undefined') {
+    setTokenLocal(localStorage.getItem('token')!);
+  }
   useEffect(() => {
 
     const loadBattles = async () => {
@@ -19,9 +23,7 @@ export default function ResultsBattle() {
 
       const resToken = await getTokens()
       setToken(resToken.data)
-
     }
-
     loadBattles()
   }, [])
 

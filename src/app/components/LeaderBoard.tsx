@@ -9,6 +9,7 @@ export default function LeaderBoard() {
   const [competition, setCompetition] = useState([])
   const [token, setToken] = useState([])
   const [filterCompeticion, setFilterCompetition] = useState("FMS España")
+  const [tokenLocal, setTokenLocal] = useState<string|undefined|null>()
 
   useEffect(() => {
 
@@ -27,7 +28,15 @@ export default function LeaderBoard() {
 
   }, [])
 
-  const tokenLocal = localStorage.getItem('token');
+
+
+  if (typeof window !== 'undefined') {
+    setTokenLocal(localStorage.getItem('token'));
+  }
+
+
+
+
   const user = token?.filter((item:any) => item.key === tokenLocal).map((x:any) => x.user)[0]
 
   return (
