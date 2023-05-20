@@ -12,11 +12,11 @@ import { FreeMinutes2Format } from "./FreeMinutes2Format";
 import { DeluxeFormat } from "./DeluxeFormat";
 import { ReplicaFormat } from "./ReplicaFormat";
 import { GanadorFormat } from "./GanadorFormat";
+import { getToken } from "../api/battles.api";
 
 export default function SaveBattle() {
 
   const [showModal, setShowModal] = useState(false);
-  const [tokenLocal, setTokenLocal] = useState<string|null>();
 
   // variables para guardar lso datos del backen backend
   const [competition, setCompetition] = useState<ICompetition[] | undefined>([])
@@ -213,10 +213,7 @@ export default function SaveBattle() {
   const [resultadoFinalMC1, setResultadoFinalMC1] = useState(0)
   const [resultadoFinalMC2, setResultadoFinalMC2] = useState(0)
 
-
-  if (typeof window !== 'undefined') {
-    setTokenLocal(localStorage.getItem('token'));
-  }
+  const tokenLocal = getToken()
 
   const data = {
     "judge": token?.filter(item => item.key === tokenLocal).map(x => x.user)[0],
@@ -430,7 +427,7 @@ export default function SaveBattle() {
     Object.values(minutoLibre1ObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) +
     Object.values(minutoLibre2ObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) +
     Object.values(deluxeObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) )
-  })
+  },[incrementalObjectMC1, randomObjectMC1,minutoLibre1ObjectMC1, minutoLibre2ObjectMC1, deluxeObjectMC1 ])
 
   useEffect(()=>{
     setResultadoFinalMC2(Object.values(incrementalObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) +
@@ -438,7 +435,7 @@ export default function SaveBattle() {
     Object.values(minutoLibre1ObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) +
     Object.values(minutoLibre2ObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) +
     Object.values(deluxeObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) )
-  })
+  },[incrementalObjectMC2, randomObjectMC2,minutoLibre1ObjectMC2, minutoLibre2ObjectMC2, deluxeObjectMC2])
 
 
 

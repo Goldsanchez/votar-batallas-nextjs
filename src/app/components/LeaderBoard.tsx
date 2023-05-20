@@ -2,6 +2,7 @@ import React from 'react'
 import LeaderBoardTable from './LeaderBoardTable'
 import { useEffect, useState } from "react"
 import { getBattles, getCompetitions, getTokens } from "../api/battles.api"
+import { getToken } from '../api/battles.api'
 
 export default function LeaderBoard() {
 
@@ -9,7 +10,6 @@ export default function LeaderBoard() {
   const [competition, setCompetition] = useState([])
   const [token, setToken] = useState([])
   const [filterCompeticion, setFilterCompetition] = useState("FMS España")
-  const [tokenLocal, setTokenLocal] = useState<string|undefined|null>()
 
   useEffect(() => {
 
@@ -28,13 +28,7 @@ export default function LeaderBoard() {
 
   }, [])
 
-
-
-  if (typeof window !== 'undefined') {
-    setTokenLocal(localStorage.getItem('token'));
-  }
-
-
+  const tokenLocal = getToken()
 
 
   const user = token?.filter((item:any) => item.key === tokenLocal).map((x:any) => x.user)[0]

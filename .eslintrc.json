@@ -1,6 +1,6 @@
 // Antes
 {
-  "extends": "next"
+  "extends": ["next", "next/babel", "next/core-web-vitals"]
 }
 
 // {
