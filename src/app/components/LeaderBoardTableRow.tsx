@@ -5,7 +5,7 @@ export default function LeaderBoardTableRow({ battles }) {
   const scores = {}
 
  
-  battles?.map(match => { // puntos
+  battles?.map((match) => { // puntos
     const { freestyler_1, freestyler_2, score_freestyler_1, score_freestyler_2, winner_replica} = match
 
     if (winner_replica.aka === "Sin Replica") {
@@ -83,7 +83,7 @@ export default function LeaderBoardTableRow({ battles }) {
   return (
     <>
       {leaderBoardSorted.map( (item, id) => {
-        return <tr className="h-12 text-center">
+        return <tr className="h-12 text-center" key={id}>
           <td className="border-b border-violet-300">{id+1}</td>
           <td className="border-b border-violet-300">{item.name}</td>
           <td className="border-b border-violet-300">{item.ptb}</td>
