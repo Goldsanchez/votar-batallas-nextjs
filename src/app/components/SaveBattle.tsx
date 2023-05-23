@@ -13,11 +13,19 @@ import { DeluxeFormat } from "./DeluxeFormat";
 import { ReplicaFormat } from "./ReplicaFormat";
 import { GanadorFormat } from "./GanadorFormat";
 import { getToken } from "../api/battles.api";
+import Link from 'next/link';
 
 export default function SaveBattle() {
 
   const [showModal, setShowModal] = useState(false);
   const [positionNameFreestyler, setPositionNameFreestyler] = useState(true)
+  const [isAuth, setIsAuth] = useState(false)
+
+  useEffect(() => {
+    if (localStorage.getItem('token') !== null) {
+      setIsAuth(true);
+    }
+  }, [isAuth]);
 
   // variables para guardar lso datos del backen backend
   const [competition, setCompetition] = useState<ICompetition[] | undefined>([])
@@ -685,14 +693,14 @@ export default function SaveBattle() {
         <p className="hidden sm:invisible sm:block sm-order-1">-</p>
         
         <div className={`basis-1/2 ${positionNameFreestyler? "order-2 sm:order-2": "order-3 sm:order-3"} sm:basis-1/3`}>
-          <input onChange={(i) => setNameMC1(i.target.value)} className="w-full rounded-[4px] px-3 py-1 pl-2 sm:w-50" list="freestyler1" type="search" placeholder="Freestyler 1" />
+          <input onChange={(i) => setNameMC1(i.target.value)} className={`w-full border rounded-[4px] px-3 py-1 pl-2 sm:w-50 ${nameMC1 === nameMC2 ? "border-red-600" : "a"}`} list="freestyler1" type="search" placeholder="Freestyler 1" />
           <datalist id="freestyler1">
             {freestyler?.map((item) => <option key={item.id} value={item.aka} />)}
           </datalist>
         </div>
         <p className="hidden order-2 text-sm sm:h-full sm:basis-1/3 sm:invisible sm:block sm:order-4">Incremental</p>
         <div className={`basis-1/2 ${positionNameFreestyler? "order-3 sm:order-3": "order-2 sm:order-2"} sm:h-full sm:basis-1/3`}>
-          <input onChange={(e) => setNameMC2(e.target.value)} className="w-full rounded-[4px] px-3 py-1 pl-2 sm:w-50" list="freestyler2" type="search" placeholder="Freestyler 2" />
+          <input onChange={(e) => setNameMC2(e.target.value)} className={`w-full border rounded-[4px] px-3 py-1 pl-2 sm:w-50 ${nameMC1 === nameMC2 ?"border-red-600" : "b"}`} list="freestyler2" type="search" placeholder="Freestyler 2" />
           <datalist id="freestyler2">
             {freestyler?.map((item) => <option key={item.id} value={item.aka} />)}
           </datalist>
@@ -1148,11 +1156,16 @@ export default function SaveBattle() {
               {/*content*/}
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 {/*header*/}
-                <div className="flex items-center justify-center p-5 border-b border-solid border-slate-200 rounded-t">
-                  <p className="text-xl font-semibold">
+                {isAuth ?                 <div className="flex items-center justify-center p-5 border-b border-solid border-slate-200 rounded-t">
+                  <p className="text font-semibold">
                     ¿Estás seguro de guardar la batalla?
                   </p>
-                </div>
+                </div> : <div className="flex items-center justify-center p-5 border-b border-solid border-slate-200 rounded-t">
+                  <p className="text font-semibold text-violet-700 ">
+                    Inicia sesión o registrate
+                  </p>
+                </div>}
+
                 {/*body*/}
                 {/* <div className="relative p-6 flex-auto">
               <p className="my-4 text-slate-500 text-lg leading-relaxed">
@@ -1165,7 +1178,7 @@ export default function SaveBattle() {
             </div> */}
                 {/*footer*/}
                 <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-                  <button
+                  {isAuth ? <><button
                     className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
                     onClick={() => setShowModal(false)}
@@ -1178,7 +1191,21 @@ export default function SaveBattle() {
                     onClick={saveBattle}
                   >
                     Guardar Batalla
-                  </button>
+                  </button></> 
+                  : <><button
+                  className="bg-violet-600 text-white font-bold text-sm px-4 py-2 rounded shadow hover:bg-violet-800 hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                  type="button"
+                >
+                  <Link href="/login"><button className="font-medium">Iniciar Sesión</button></Link>
+                </button>
+                <button
+                  className="bg-violet-600 text-white font-bold text-sm px-4 py-2 rounded shadow hover:bg-violet-800 hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                  type="button"
+                  onClick={saveBattle}
+                >
+                  <Link href="/signup"><button className="font-medium">Registrarse</button></Link>
+                </button></> }
+
                 </div>
               </div>
             </div>

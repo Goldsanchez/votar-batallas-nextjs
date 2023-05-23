@@ -150,7 +150,7 @@ export default function Header() {
                   </Transition>
                 </Menu>
               </div>
-              : <Link href="/login"><button className="font-medium">Login</button></Link>
+              : <div className="flex gap-5"><Link href="/login"><button className="font-medium">Login</button></Link><Link href="/signup"><button className="font-medium">Register</button></Link></div>
               }
             </div>
           </div>

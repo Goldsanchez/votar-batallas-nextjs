@@ -2,6 +2,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { API_URL } from '../api/battles.api';
+import Link from 'next/link';
 
 export default function Signup() {
 
@@ -88,9 +89,9 @@ export default function Signup() {
 
             <p className="mt-10 text-center text-sm text-gray-500">
               Are you a member?{' '}
-              <a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+              <Link href="/login" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
                 Login
-              </a>
+              </Link>
             </p>
           </div>
         </div>
