@@ -14,12 +14,12 @@ import { ReplicaFormat } from "./ReplicaFormat";
 import { GanadorFormat } from "./GanadorFormat";
 import { getToken } from "../api/battles.api";
 import Link from 'next/link';
+import {XMarkIcon } from '@heroicons/react/24/outline'
 
-export default function SaveBattle() {
+export default function SaveBattle({isAuth, setIsAuth}:any) {
 
   const [showModal, setShowModal] = useState(false);
   const [positionNameFreestyler, setPositionNameFreestyler] = useState(true)
-  const [isAuth, setIsAuth] = useState(false)
 
   useEffect(() => {
     if (localStorage.getItem('token') !== null) {
@@ -671,6 +671,10 @@ export default function SaveBattle() {
     })
   }
 
+  const closeModal = () => {
+    setShowModal(false)
+  }
+
 
   return (
     <section className="save-battle grid gap-5 bg-violet-200 p-6 rounded-lg ">
@@ -1156,14 +1160,14 @@ export default function SaveBattle() {
               {/*content*/}
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 {/*header*/}
-                {isAuth ?                 <div className="flex items-center justify-center p-5 border-b border-solid border-slate-200 rounded-t">
+                {isAuth ? <div className="flex items-center justify-center p-5 border-b border-solid border-slate-200 rounded-t">
                   <p className="text font-semibold">
                     ¿Estás seguro de guardar la batalla?
                   </p>
                 </div> : <div className="flex items-center justify-center p-5 border-b border-solid border-slate-200 rounded-t">
                   <p className="text font-semibold text-violet-700 ">
                     Inicia sesión o registrate
-                  </p>
+                  </p><XMarkIcon onClick={closeModal} className="h-5 w-5 ml-4 cursor-pointer text-red-600 font-semibold" />
                 </div>}
 
                 {/*body*/}

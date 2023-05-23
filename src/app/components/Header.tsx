@@ -18,15 +18,8 @@ function classNames(...classes:any[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Header() {
+export default function Header({isAuth, setIsAuth}:any) {
 
-  const [isAuth, setIsAuth] = useState(false)
-
-  useEffect(() => {
-    if (localStorage.getItem('token') !== null) {
-      setIsAuth(true);
-    }
-  }, [isAuth]);
 
   const logout = () => {
 
