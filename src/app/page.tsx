@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <main className="flex flex-row items-center justify-center bg-[#e8ecf1] p-5">
-      <div className="flex flex-col gap-4 w-[375px sm:w-[750px]"> {/* sm:w-[1200px] */}
+      <div className="flex flex-col gap-4 w-[375px sm:w-[850px]"> {/* sm:w-[1200px] */}
         <Header isAuth={isAuth} setIsAuth={setIsAuth}/>
         <Body   isAuth={isAuth} setIsAuth={setIsAuth}/>
       </div>
