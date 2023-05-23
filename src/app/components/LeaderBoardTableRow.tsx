@@ -1,17 +1,9 @@
 
-const LeaderboardComponent = ({  }) => {
-  return (
-    <>
-    </>
-  )
-}
-
-
 export default function LeaderBoardTableRow({ battles }:any) {
 
   const scores: { [k: string]: number } = {};
   const ptbs: { [k: string]: number } = {};
- 
+
   battles?.map((match:any) => { // puntos
     const { freestyler_1, freestyler_2, score_freestyler_1, score_freestyler_2, winner_replica} = match
 
@@ -27,7 +19,7 @@ export default function LeaderBoardTableRow({ battles }:any) {
       if (score_freestyler_1 > score_freestyler_2) {
         scores[freestyler_1.aka] += 3;
         scores[freestyler_2.aka] += 0;
-      } else if (score_freestyler_2 < score_freestyler_1) {
+      } else if (score_freestyler_2 > score_freestyler_1) {
         scores[freestyler_2.aka] += 3;
         scores[freestyler_1.aka] += 0;
       }
@@ -47,7 +39,7 @@ export default function LeaderBoardTableRow({ battles }:any) {
       if (score_freestyler_1 > score_freestyler_2) {
         scores[freestyler_1.aka] += 2;
         scores[freestyler_2.aka] += 1;
-      } else if (score_freestyler_2 < score_freestyler_1) {
+      } else if (score_freestyler_2 > score_freestyler_1) {
         scores[freestyler_2.aka] += 2;
         scores[freestyler_1.aka] += 1;
       }
@@ -91,9 +83,9 @@ export default function LeaderBoardTableRow({ battles }:any) {
       {leaderBoardSorted.map((item, index) => {
         return <tr className="h-12 text-center" key={index}>
           <td  className="border-b border-violet-300">{index+1}</td>
-          <td className="border-b border-violet-300">{item.name}</td>
-          <td className="border-b border-violet-300">{item.ptb}</td>
+          <td className="border-b border-violet-300 text-violet-700 font-medium">{item.name}</td>
           <td className="border-b border-violet-300">{item.puntos}</td>
+          <td className="border-b border-violet-300">{item.ptb}</td>
         </tr>
         
       })}

@@ -7,21 +7,21 @@ export function FreeMinutes1Format({minutoLibre1ObjectMC1, minutoLibre1ObjectMC2
           <div className="flex flex-col items-end mt-7">
             <div className="mb-1 flex items-center gap-1">
               <h3 className="mr-5 text-xl font-medium">{nameMC1}</h3>
-              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC1.patron1 == 0 ? "" : minutoLibre1ObjectMC1.patron1} onChange={handleMinutoLibre1MC1Change} type="number" name="patron1" />
-              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC1.patron2 == 0 ? "" : minutoLibre1ObjectMC1.patron2} onChange={handleMinutoLibre1MC1Change} type="number" name="patron2" />
-              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC1.patron3 == 0 ? "" : minutoLibre1ObjectMC1.patron3} onChange={handleMinutoLibre1MC1Change} type="number" name="patron3" />
-              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC1.patron4 == 0 ? "" : minutoLibre1ObjectMC1.patron4} onChange={handleMinutoLibre1MC1Change} type="number" name="patron4" />
-              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC1.patron5 == 0 ? "" : minutoLibre1ObjectMC1.patron5} onChange={handleMinutoLibre1MC1Change} type="number" name="patron5" />
-              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC1.patron6 == 0 ? "" : minutoLibre1ObjectMC1.patron6} onChange={handleMinutoLibre1MC1Change} type="number" name="patron6" />
+              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC1.patron1} onChange={handleMinutoLibre1MC1Change} name="patron1" />
+              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC1.patron2} onChange={handleMinutoLibre1MC1Change} name="patron2" />
+              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC1.patron3} onChange={handleMinutoLibre1MC1Change} name="patron3" />
+              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC1.patron4} onChange={handleMinutoLibre1MC1Change} name="patron4" />
+              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC1.patron5} onChange={handleMinutoLibre1MC1Change} name="patron5" />
+              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC1.patron6} onChange={handleMinutoLibre1MC1Change} name="patron6" />
             </div>
             <div className="flex items-center gap-1">
               <h3 className="mr-5 text-xl font-medium">{nameMC2}</h3>
-              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC2.patron1 == 0 ? "" : minutoLibre1ObjectMC2.patron1} onChange={handleMinutoLibre1MC2Change} type="number" name="patron1" />
-              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC2.patron2 == 0 ? "" : minutoLibre1ObjectMC2.patron2} onChange={handleMinutoLibre1MC2Change} type="number" name="patron2" />
-              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC2.patron3 == 0 ? "" : minutoLibre1ObjectMC2.patron3} onChange={handleMinutoLibre1MC2Change} type="number" name="patron3" />
-              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC2.patron4 == 0 ? "" : minutoLibre1ObjectMC2.patron4} onChange={handleMinutoLibre1MC2Change} type="number" name="patron4" />
-              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC2.patron5 == 0 ? "" : minutoLibre1ObjectMC2.patron5} onChange={handleMinutoLibre1MC2Change} type="number" name="patron5" />
-              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC2.patron6 == 0 ? "" : minutoLibre1ObjectMC2.patron6} onChange={handleMinutoLibre1MC2Change} type="number" name="patron6" />
+              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC2.patron1} onChange={handleMinutoLibre1MC2Change} name="patron1" />
+              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC2.patron2} onChange={handleMinutoLibre1MC2Change} name="patron2" />
+              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC2.patron3} onChange={handleMinutoLibre1MC2Change} name="patron3" />
+              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC2.patron4} onChange={handleMinutoLibre1MC2Change} name="patron4" />
+              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC2.patron5} onChange={handleMinutoLibre1MC2Change} name="patron5" />
+              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC2.patron6} onChange={handleMinutoLibre1MC2Change} name="patron6" />
             </div>
             <div className="flex pr-4 pt-2 gap-11">
               <input type="checkbox" checked={checkboxValuesMC2.respuesta1}  onChange={handleCheckboxChangeMC2} name="respuesta1"/>
@@ -35,18 +35,18 @@ export function FreeMinutes1Format({minutoLibre1ObjectMC1, minutoLibre1ObjectMC2
           <div className="flex gap-3 items-start">
             <div className="flex flex-col items-center gap-1">
               <p className="font-medium">Técnicas</p>
-              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC1.tecnica == 0 ? "" : minutoLibre1ObjectMC1.tecnica} onChange={handleMinutoLibre1MC1Change} type="number" name="tecnica" />
-              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC2.tecnica == 0 ? "" : minutoLibre1ObjectMC2.tecnica} onChange={handleMinutoLibre1MC2Change} type="number" name="tecnica" />
+              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC1.tecnica} onChange={handleMinutoLibre1MC1Change} name="tecnica" />
+              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC2.tecnica} onChange={handleMinutoLibre1MC2Change} name="tecnica" />
             </div>
             <div className="flex flex-col items-center gap-1">
               <p className="font-medium">Flow</p>
-              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC1.flow == 0 ? "" : minutoLibre1ObjectMC1.flow} onChange={handleMinutoLibre1MC1Change} type="number" name="flow" />
-              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC2.flow == 0 ? "" : minutoLibre1ObjectMC2.flow} onChange={handleMinutoLibre1MC2Change} type="number" name="flow" />
+              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC1.flow} onChange={handleMinutoLibre1MC1Change} name="flow" />
+              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC2.flow} onChange={handleMinutoLibre1MC2Change} name="flow" />
             </div>
             <div className="flex flex-col items-center gap-1">
               <p className="font-medium">Escena</p>
-              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC1.escena == 0 ? "" : minutoLibre1ObjectMC1.escena} onChange={handleMinutoLibre1MC1Change} type="number" name="escena" />
-              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC2.escena == 0 ? "" : minutoLibre1ObjectMC2.escena} onChange={handleMinutoLibre1MC2Change} type="number" name="escena" />
+              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC1.escena} onChange={handleMinutoLibre1MC1Change} name="escena" />
+              <input className="h-12 w-14 p-2 text-center font-medium text-2xl" value={minutoLibre1ObjectMC2.escena} onChange={handleMinutoLibre1MC2Change} name="escena" />
             </div>
             <div className="flex flex-col items-center gap-1">
               <p className="font-semibold">Total</p>

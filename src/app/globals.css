@@ -10,6 +10,6 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 /* Para Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
+/* input[type=number] {
+  height: 8px;
+} */

@@ -17,6 +17,7 @@ import { getToken } from "../api/battles.api";
 export default function SaveBattle() {
 
   const [showModal, setShowModal] = useState(false);
+  const [positionNameFreestyler, setPositionNameFreestyler] = useState(true)
 
   // variables para guardar lso datos del backen backend
   const [competition, setCompetition] = useState<ICompetition[] | undefined>([])
@@ -36,153 +37,153 @@ export default function SaveBattle() {
   const [replicaFormat, setReplicaFormat] = useState(false)
 
   const [incrementalObjectMC1, setIncrementalObjectMC1] = useState<PatronType>({
-    patron1: 0,
-    patron2: 0,
-    patron3: 0,
-    patron4: 0,
-    patron5: 0,
-    patron6: 0,
-    tecnica: 0,
-    flow: 0,
-    escena: 0,
+    patron1: "",
+    patron2: "",
+    patron3: "",
+    patron4: "",
+    patron5: "",
+    patron6: "",
+    tecnica: "",
+    flow: "",
+    escena: "",
   })
 
   const [incrementalObjectMC2, setIncrementalObjectMC2] = useState<PatronType>({
-    patron1: 0,
-    patron2: 0,
-    patron3: 0,
-    patron4: 0,
-    patron5: 0,
-    patron6: 0,
-    tecnica: 0,
-    flow: 0,
-    escena: 0,
+    patron1: "",
+    patron2: "",
+    patron3: "",
+    patron4: "",
+    patron5: "",
+    patron6: "",
+    tecnica: "",
+    flow: "",
+    escena: "",
   })
 
   const [randomObjectMC1, setRandomObjectMC1] = useState<PatronType>({
-    patron1: 0,
-    patron2: 0,
-    patron3: 0,
-    patron4: 0,
-    patron5: 0,
-    patron6: 0,
-    tecnica: 0,
-    flow: 0,
-    escena: 0,
+    patron1: "",
+    patron2: "",
+    patron3: "",
+    patron4: "",
+    patron5: "",
+    patron6: "",
+    tecnica: "",
+    flow: "",
+    escena: "",
   })
 
   const [randomObjectMC2, setRandomObjectMC2] = useState<PatronType>({
-    patron1: 0,
-    patron2: 0,
-    patron3: 0,
-    patron4: 0,
-    patron5: 0,
-    patron6: 0,
-    tecnica: 0,
-    flow: 0,
-    escena: 0,
+    patron1: "",
+    patron2: "",
+    patron3: "",
+    patron4: "",
+    patron5: "",
+    patron6: "",
+    tecnica: "",
+    flow: "",
+    escena: "",
   })
 
   const [minutoLibre1ObjectMC1, setMinutoLibre1ObjectMC1] = useState<PatronType>({
-    patron1: 0,
-    patron2: 0,
-    patron3: 0,
-    patron4: 0,
-    patron5: 0,
-    patron6: 0,
-    tecnica: 0,
-    flow: 0,
-    escena: 0,
+    patron1: "",
+    patron2: "",
+    patron3: "",
+    patron4: "",
+    patron5: "",
+    patron6: "",
+    tecnica: "",
+    flow: "",
+    escena: "",
   })
 
   const [minutoLibre1ObjectMC2, setMinutoLibre1ObjectMC2] = useState<PatronType>({
-    patron1: 0,
-    patron2: 0,
-    patron3: 0,
-    patron4: 0,
-    patron5: 0,
-    patron6: 0,
-    tecnica: 0,
-    flow: 0,
-    escena: 0,
+    patron1: "",
+    patron2: "",
+    patron3: "",
+    patron4: "",
+    patron5: "",
+    patron6: "",
+    tecnica: "",
+    flow: "",
+    escena: "",
   })
 
   const [minutoLibre2ObjectMC1, setMinutoLibre2ObjectMC1] = useState<PatronType>({
-    patron1: 0,
-    patron2: 0,
-    patron3: 0,
-    patron4: 0,
-    patron5: 0,
-    patron6: 0,
-    tecnica: 0,
-    flow: 0,
-    escena: 0,
+    patron1: "",
+    patron2: "",
+    patron3: "",
+    patron4: "",
+    patron5: "",
+    patron6: "",
+    tecnica: "",
+    flow: "",
+    escena: "",
   })
 
   const [minutoLibre2ObjectMC2, setMinutoLibre2ObjectMC2] = useState<PatronType>({
-    patron1: 0,
-    patron2: 0,
-    patron3: 0,
-    patron4: 0,
-    patron5: 0,
-    patron6: 0,
-    tecnica: 0,
-    flow: 0,
-    escena: 0,
+    patron1: "",
+    patron2: "",
+    patron3: "",
+    patron4: "",
+    patron5: "",
+    patron6: "",
+    tecnica: "",
+    flow: "",
+    escena: "",
   })
 
   const [deluxeObjectMC1, setDeluxeObjectMC1] = useState<DeluxeType>({
-    acapela1: 0,
-    acapela2: 0,
-    acapela3: 0,
-    patron1: 0,
-    patron2: 0,
-    patron3: 0,
-    patron4: 0,
-    patron5: 0,
-    patron6: 0,
-    tecnica: 0,
-    flow: 0,
-    escena: 0,
+    acapela1: "",
+    acapela2: "",
+    acapela3: "",
+    patron1: "",
+    patron2: "",
+    patron3: "",
+    patron4: "",
+    patron5: "",
+    patron6: "",
+    tecnica: "",
+    flow: "",
+    escena: "",
   })
 
   const [deluxeObjectMC2, setDeluxeObjectMC2] = useState<DeluxeType>({
-    acapela1: 0,
-    acapela2: 0,
-    acapela3: 0,
-    patron1: 0,
-    patron2: 0,
-    patron3: 0,
-    patron4: 0,
-    patron5: 0,
-    patron6: 0,
-    tecnica: 0,
-    flow: 0,
-    escena: 0,
+    acapela1: "",
+    acapela2: "",
+    acapela3: "",
+    patron1: "",
+    patron2: "",
+    patron3: "",
+    patron4: "",
+    patron5: "",
+    patron6: "",
+    tecnica: "",
+    flow: "",
+    escena: "",
   })
 
   const [replicaObjectMC1, setReplicaObjectMC1] = useState<PatronType>({
-    patron1: 0,
-    patron2: 0,
-    patron3: 0,
-    patron4: 0,
-    patron5: 0,
-    patron6: 0,
-    tecnica: 0,
-    flow: 0,
-    escena: 0,
+    patron1: "",
+    patron2: "",
+    patron3: "",
+    patron4: "",
+    patron5: "",
+    patron6: "",
+    tecnica: "",
+    flow: "",
+    escena: "",
   })
 
   const [replicaObjectMC2, setReplicaObjectMC2] = useState<PatronType>({
-    patron1: 0,
-    patron2: 0,
-    patron3: 0,
-    patron4: 0,
-    patron5: 0,
-    patron6: 0,
-    tecnica: 0,
-    flow: 0,
-    escena: 0,
+    patron1: "",
+    patron2: "",
+    patron3: "",
+    patron4: "",
+    patron5: "",
+    patron6: "",
+    tecnica: "",
+    flow: "",
+    escena: "",
   })
 
   const [checkboxValuesMC2, setCheckboxValuesMC2] = useState({
@@ -379,7 +380,7 @@ export default function SaveBattle() {
     "replicaTotalMC2": Object.values(replicaObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) || 0,
   }
 
-  const handleSubmit = async (e:any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault()
     setShowModal(true)
   }
@@ -421,21 +422,21 @@ export default function SaveBattle() {
 
   }, [])
 
-  useEffect(()=>{
+  useEffect(() => {
     setResultadoFinalMC1(Object.values(incrementalObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) +
-    Object.values(randomObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) +
-    Object.values(minutoLibre1ObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) +
-    Object.values(minutoLibre2ObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) +
-    Object.values(deluxeObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) )
-  },[incrementalObjectMC1, randomObjectMC1,minutoLibre1ObjectMC1, minutoLibre2ObjectMC1, deluxeObjectMC1 ])
+      Object.values(randomObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) +
+      Object.values(minutoLibre1ObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) +
+      Object.values(minutoLibre2ObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) +
+      Object.values(deluxeObjectMC1).reduce((a, b) => Number(a) + Number(b), 0))
+  }, [incrementalObjectMC1, randomObjectMC1, minutoLibre1ObjectMC1, minutoLibre2ObjectMC1, deluxeObjectMC1])
 
-  useEffect(()=>{
+  useEffect(() => {
     setResultadoFinalMC2(Object.values(incrementalObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) +
-    Object.values(randomObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) +
-    Object.values(minutoLibre1ObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) +
-    Object.values(minutoLibre2ObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) +
-    Object.values(deluxeObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) )
-  },[incrementalObjectMC2, randomObjectMC2,minutoLibre1ObjectMC2, minutoLibre2ObjectMC2, deluxeObjectMC2])
+      Object.values(randomObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) +
+      Object.values(minutoLibre1ObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) +
+      Object.values(minutoLibre2ObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) +
+      Object.values(deluxeObjectMC2).reduce((a, b) => Number(a) + Number(b), 0))
+  }, [incrementalObjectMC2, randomObjectMC2, minutoLibre1ObjectMC2, minutoLibre2ObjectMC2, deluxeObjectMC2])
 
 
 
@@ -448,7 +449,7 @@ export default function SaveBattle() {
     setDeluxeFormat(false)
     setGanadorFormat(false)
     setReplicaFormat(false)
-
+    setPositionNameFreestyler(true)
   }
   const clickRandomMode = () => {
     setFormatoTitle("Random")
@@ -459,10 +460,10 @@ export default function SaveBattle() {
     setDeluxeFormat(false)
     setGanadorFormat(false)
     setReplicaFormat(false)
-    7
+    setPositionNameFreestyler(false)
   }
   const clickFreeMinutes1 = () => {
-    setFormatoTitle("Minutos a sangre 1")
+    setFormatoTitle("Minutos 1")
     setIncrementalFormat(false)
     setRandomModeFormat(false)
     setFreeMinutesFormat1(true)
@@ -470,9 +471,10 @@ export default function SaveBattle() {
     setDeluxeFormat(false)
     setGanadorFormat(false)
     setReplicaFormat(false)
+    setPositionNameFreestyler(true)
   }
   const clickFreeMinutes2 = () => {
-    setFormatoTitle("Minutos a sangre 2")
+    setFormatoTitle("Minutos 2")
     setIncrementalFormat(false)
     setRandomModeFormat(false)
     setFreeMinutesFormat1(false)
@@ -480,6 +482,7 @@ export default function SaveBattle() {
     setDeluxeFormat(false)
     setGanadorFormat(false)
     setReplicaFormat(false)
+    setPositionNameFreestyler(false)
   }
   const clickDeluxe = () => {
     setFormatoTitle("Deluxe")
@@ -490,6 +493,7 @@ export default function SaveBattle() {
     setDeluxeFormat(true)
     setGanadorFormat(false)
     setReplicaFormat(false)
+    setPositionNameFreestyler(true)
   }
   const clickGanador = () => {
     setFormatoTitle("Ganador")
@@ -503,7 +507,7 @@ export default function SaveBattle() {
   }
   const clickReplica = () => {
 
-    if (resultadoFinalMC1 == resultadoFinalMC2) {
+    if ( (resultadoFinalMC1 - resultadoFinalMC2 > 0 &&  resultadoFinalMC1 - resultadoFinalMC2 < 2) || (resultadoFinalMC2 - resultadoFinalMC1 > 0 && resultadoFinalMC2 - resultadoFinalMC1 < 2)) {
       setFormatoTitle("Replica")
       setIncrementalFormat(false)
       setRandomModeFormat(false)
@@ -512,6 +516,7 @@ export default function SaveBattle() {
       setDeluxeFormat(false)
       setGanadorFormat(false)
       setReplicaFormat(true)
+      setPositionNameFreestyler(false)
     }
   }
 
@@ -560,7 +565,7 @@ export default function SaveBattle() {
 
   const handleMinutoLibre1MC1Change = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e?.target
-    
+
 
     setMinutoLibre1ObjectMC1((prevData) => {
       return {
@@ -660,113 +665,529 @@ export default function SaveBattle() {
 
 
   return (
-    <section className="bg-white pb-10 pt-6 flex flex-col gap-10">
-      <div className="formato flex flex-col justify-center items-center" >
-        <h3 className="text-3xl font-semibold self-start pl-16">{formatoTitle}</h3>
-        <IncrementalFormat incrementalObjectMC1 = {incrementalObjectMC1} incrementalFormat = {incrementalFormat} incrementalObjectMC2 = {incrementalObjectMC2} 
-        handleIncrementalMC1Change = {handleIncrementalMC1Change} handleIncrementalMC2Change = {handleIncrementalMC2Change} nameMC1 = {nameMC1} nameMC2 = {nameMC2}/>
-        
-        <RandomFormat randomObjectMC1 = {randomObjectMC1} randomModeFormat = {randomModeFormat} randomObjectMC2 = {randomObjectMC2} 
-        handleRandomMC1Change = {handleRandomMC1Change} handleRandomMC2Change = {handleRandomMC2Change} nameMC1 = {nameMC1} nameMC2 = {nameMC2}/>
-        
-        <FreeMinutes1Format minutoLibre1ObjectMC1 = {minutoLibre1ObjectMC1} freeMinutesFormat1 = {freeMinutesFormat1} minutoLibre1ObjectMC2 = {minutoLibre1ObjectMC2} 
-        handleMinutoLibre1MC1Change = {handleMinutoLibre1MC1Change} handleMinutoLibre1MC2Change = {handleMinutoLibre1MC2Change} nameMC1 = {nameMC1} nameMC2 = {nameMC2} checkboxValuesMC2={checkboxValuesMC2} handleCheckboxChangeMC2={handleCheckboxChangeMC2}/>
-       
-        <FreeMinutes2Format minutoLibre2ObjectMC1 = {minutoLibre2ObjectMC1} freeMinutesFormat2 = {freeMinutesFormat2} minutoLibre2ObjectMC2 = {minutoLibre2ObjectMC2} 
-        handleMinutoLibre2MC1Change = {handleMinutoLibre2MC1Change} handleMinutoLibre2MC2Change = {handleMinutoLibre2MC2Change} nameMC1 = {nameMC1} nameMC2 = {nameMC2}
-        checkboxValuesMC1 = {checkboxValuesMC1} handleCheckboxChangeMC1={handleCheckboxChangeMC1} />
-        
-        <DeluxeFormat deluxeObjectMC1 = {deluxeObjectMC1} deluxeFormat = {deluxeFormat} deluxeObjectMC2 = {deluxeObjectMC2} 
-        handleDeluxeMC1Change = {handleDeluxeMC1Change} handleDeluxeMC2Change = {handleDeluxeMC2Change} nameMC1 = {nameMC1} nameMC2 = {nameMC2}/>
-        
-        <GanadorFormat ganadorFormat = {ganadorFormat} incrementalObjectMC1 = {incrementalObjectMC1} incrementalObjectMC2 = {incrementalObjectMC2} 
-        randomObjectMC1 = {randomObjectMC1} 
-        randomObjectMC2 = {randomObjectMC2} minutoLibre1ObjectMC1 = {minutoLibre1ObjectMC1} minutoLibre1ObjectMC2 = {minutoLibre1ObjectMC2}
-        minutoLibre2ObjectMC1 = {minutoLibre2ObjectMC1} minutoLibre2ObjectMC2 = {minutoLibre2ObjectMC2} deluxeObjectMC1 = {deluxeObjectMC1} 
-        deluxeObjectMC2 = {deluxeObjectMC2} nameMC1 = {nameMC1} nameMC2 = {nameMC2} resultadoFinalMC1={resultadoFinalMC1} resultadoFinalMC2={resultadoFinalMC2}/>
-
-        <ReplicaFormat replicaObjectMC1 = {replicaObjectMC1} replicaFormat = {replicaFormat} replicaObjectMC2 = {replicaObjectMC2} 
-        handleReplicaMC1Change = {handleReplicaMC1Change} handleReplicaMC2Change = {handleReplicaMC2Change} nameMC1 = {nameMC1} nameMC2 = {nameMC2}/>
+    <section className="save-battle grid gap-5 bg-violet-200 p-6 rounded-lg ">
+      <div className="0 flex flex-row justify-center sm:col-span-12"> {/* Votar Batalla */}
+        <h2 className="text-xl text-violet-700 font-semibold" >Votar Batalla</h2>
       </div>
-      <div className="seleccionar-formato flex justify-between px-16">
-        <button className={`border-2 px-1 py-1 w-[18%] h-10 ${incrementalFormat ? "bg-gray-200" : ""}`} onClick={clickIncremental}>Incremental model</button>
-        <button className={`border-2 px-1 py-1 w-[14%] h-10 ${randomModeFormat ? "bg-gray-200" : ""}`} onClick={clickRandomMode}>Random mode</button>
-        <button className={`border-2 px-1 py-1 w-[17%] h-10 ${freeMinutesFormat1 ? "bg-gray-200" : ""}`} onClick={clickFreeMinutes1}>Minutos a sangre 1</button>
-        <button className={`border-2 px-1 py-1 w-[17%] h-10 ${freeMinutesFormat2 ? "bg-gray-200" : ""}`} onClick={clickFreeMinutes2}>Minutos a sangre 2</button>
-        <button className={`border-2 px-1 py-1 w-[12%] h-10 ${deluxeFormat ? "bg-gray-200" : ""}`} onClick={clickDeluxe}>Deluxe</button>
-        <button className={`border-2 px-1 py-1 w-[12%] h-10 ${ganadorFormat ? "bg-gray-200" : ""}`} onClick={clickGanador}>Ganador</button>
-        <button className={`border-2 px-1 py-1 w-[10%] h-10 ${replicaFormat ? "bg-gray-200" : ""}`} onClick={clickReplica}>Replica</button>
-      </div>
-      <div className="data flex justify-between px-16 ">
-        <select ref={competitionRef} className="w-48 h-12 border border-violet-400 rounded-md bg-violet-200">
-          {competition?.map((item) => <option key={item.id}>{item.name}</option>)}
+      <div className="1 flex flex-row justify-between gap-1 sm:col-span-2 sm:row-start-2 sm:flex-col"> {/* FMS Argentina */}
+        <p className="hidden sm:invisible sm:block">-</p>
+        <select ref={competitionRef} className="basis-2/4 rounded-[4px] px-3 py-1 sm:basis-1/4" name="" id="">
+          {competition?.map((item) => <option key={item.id} >{item.name}</option>)}
         </select>
-        <select ref={seasonRef} className="h-12 w-28 border border-violet-400 rounded-md bg-violet-200">
+        <select ref={seasonRef} className="basis-1/4 rounded-[4px] px-3 py-1 sm:basis-1/4" name="" id="">
           {season?.map((item) => <option key={item.id}>{item.name}</option>)}
         </select>
-        <select ref={groupRef} className="h-12 w-20 border border-violet-400 rounded-md bg-violet-200">
+        <select ref={groupRef} className="basis-1/4 rounded-[4px] px-3 py-1 sm:basis-1/4" name="" id="">
           {group?.map((item) => <option key={item.id}>{item.name}</option>)}
         </select>
-        <input onChange={(i) => setNameMC1(i.target.value)} list="freestyler1" type="search" className="text-center h-12 border border-violet-400 rounded-md bg-violet-200" placeholder="Freestyler 1" />
-        <datalist id="freestyler1">
-          {freestyler?.map((item) => <option key={item.id} value={item.aka} />)}
-        </datalist>
-        <input onChange={(e) => setNameMC2(e.target.value)} list="freestyler2" type="search" className="text-center h-12 border border-violet-400 rounded-md bg-violet-200" placeholder="Freestyler 2" />
-        <datalist id="freestyler2">
-          {freestyler?.map((item) => <option key={item.id} value={item.aka} />)}
-        </datalist>
-        <button onClick={handleSubmit} className="h-12 bg-violet-700 text-white px-5 rounded-md">
-          Guardar Batalla
-        </button>
-        {showModal ? (
-          <>
-            <div
-              className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
-            >
-              <div className="relative w-auto my-6 mx-auto max-w-3xl">
-                {/*content*/}
-                <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                  {/*header*/}
-                  <div className="flex items-center justify-center p-5 border-b border-solid border-slate-200 rounded-t">
-                    <p className="text-xl font-semibold">
-                      ¿Estás seguro de guardar la batalla?
-                    </p>
-                  </div>
-                  {/*body*/}
-                  {/* <div className="relative p-6 flex-auto">
-                  <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                    I always felt like I could do anything. That’s the main
-                    thing people are controlled by! Thoughts- their perception
-                    of themselves! They're slowed down by their perception of
-                    themselves. If you're taught you can’t do anything, you
-                    won’t do anything. I was taught I could do everything.
+      </div>
+      <div className="2 flex flex-row justify-between gap-1 sm:col-span-2 sm:row-start-2 sm:flex-col"> {/* Freestyle */}
+        <p className="hidden sm:invisible sm:block sm-order-1">-</p>
+        
+        <div className={`basis-1/2 ${positionNameFreestyler? "order-2 sm:order-2": "order-3 sm:order-3"} sm:basis-1/3`}>
+          <input onChange={(i) => setNameMC1(i.target.value)} className="w-full rounded-[4px] px-3 py-1 pl-2 sm:w-50" list="freestyler1" type="search" placeholder="Freestyler 1" />
+          <datalist id="freestyler1">
+            {freestyler?.map((item) => <option key={item.id} value={item.aka} />)}
+          </datalist>
+        </div>
+        <p className="hidden order-2 text-sm sm:h-full sm:basis-1/3 sm:invisible sm:block sm:order-4">Incremental</p>
+        <div className={`basis-1/2 ${positionNameFreestyler? "order-3 sm:order-3": "order-2 sm:order-2"} sm:h-full sm:basis-1/3`}>
+          <input onChange={(e) => setNameMC2(e.target.value)} className="w-full rounded-[4px] px-3 py-1 pl-2 sm:w-50" list="freestyler2" type="search" placeholder="Freestyler 2" />
+          <datalist id="freestyler2">
+            {freestyler?.map((item) => <option key={item.id} value={item.aka} />)}
+          </datalist>
+        </div>
+      </div>
+      {incrementalFormat && <div className="3 flex flex-col gap-1 sm:col-span-8 sm:row-start-2 sm:flex sm:flex-row"> {/* Incremental */}
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P1</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={incrementalObjectMC1.patron1} onChange={handleIncrementalMC1Change} name="patron1" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={incrementalObjectMC2.patron1} onChange={handleIncrementalMC2Change} name="patron1" />
+          <input className="hidden"  value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P2</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={incrementalObjectMC1.patron2} onChange={handleIncrementalMC1Change} name="patron2" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={incrementalObjectMC2.patron2} onChange={handleIncrementalMC2Change} name="patron2" />
+          <input className="hidden " value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P3</p>
+          <input className="w-full basis-5/12 text-center sm:w-8  sm:basis-1/4" type="number" value={incrementalObjectMC1.patron3} onChange={handleIncrementalMC1Change} name="patron3" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={incrementalObjectMC2.patron3} onChange={handleIncrementalMC2Change} name="patron3" />
+          <input className="hidden " value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs mb-2">P4</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={incrementalObjectMC1.patron4} onChange={handleIncrementalMC1Change} name="patron4" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={incrementalObjectMC2.patron4} onChange={handleIncrementalMC2Change} name="patron4" />
+          <input className="hidden " value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P5</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={incrementalObjectMC1.patron5} onChange={handleIncrementalMC1Change} name="patron5" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={incrementalObjectMC2.patron5} onChange={handleIncrementalMC2Change} name="patron5" />
+          <input className="hidden " value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P6</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={incrementalObjectMC1.patron6} onChange={handleIncrementalMC1Change} name="patron6" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={incrementalObjectMC2.patron6} onChange={handleIncrementalMC2Change} name="patron6" />
+          <input className="hidden " value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">T</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={incrementalObjectMC1.tecnica} onChange={handleIncrementalMC1Change} name="tecnica" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={incrementalObjectMC2.tecnica} onChange={handleIncrementalMC2Change} name="tecnica" />
+          <input className="hidden " value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">F</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={incrementalObjectMC1.flow} onChange={handleIncrementalMC1Change} name="flow" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={incrementalObjectMC2.flow} onChange={handleIncrementalMC2Change} name="flow" />
+          <input className="hidden " value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">E</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={incrementalObjectMC1.escena} onChange={handleIncrementalMC1Change} name="escena" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={incrementalObjectMC2.escena} onChange={handleIncrementalMC2Change} name="escena" />
+          <input className="hidden " value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2 font-medium">Total</p>
+          <input className=" w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={Object.values(incrementalObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) as number} />
+          <input className=" w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={Object.values(incrementalObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) as number} />
+          <input className="hidden " value="5" type="checkbox" name="" id="" />
+        </div>
+      </div>}
+      {randomModeFormat && <div className="3 flex flex-col gap-1 sm:col-span-8 sm:row-start-2 sm:row-end-3 sm:flex sm:flex-row"> {/* Random */}
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P1</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={randomObjectMC2.patron1} onChange={handleRandomMC2Change} name="patron1" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={randomObjectMC1.patron1} onChange={handleRandomMC1Change} name="patron1" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2 ">P2</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={randomObjectMC2.patron2} onChange={handleRandomMC2Change} name="patron2" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={randomObjectMC1.patron2} onChange={handleRandomMC1Change} name="patron2" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P3</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={randomObjectMC2.patron3} onChange={handleRandomMC2Change} name="patron3" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={randomObjectMC1.patron3} onChange={handleRandomMC1Change} name="patron3" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P4</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={randomObjectMC2.patron4} onChange={handleRandomMC2Change} name="patron4" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={randomObjectMC1.patron4} onChange={handleRandomMC1Change} name="patron4" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P5</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={randomObjectMC2.patron5} onChange={handleRandomMC2Change} name="patron5" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={randomObjectMC1.patron5} onChange={handleRandomMC1Change} name="patron5" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P6</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={randomObjectMC2.patron6} onChange={handleRandomMC2Change} name="patron6" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={randomObjectMC1.patron6} onChange={handleRandomMC1Change} name="patron6" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">T</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={randomObjectMC2.tecnica} onChange={handleRandomMC2Change} name="tecnica" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={randomObjectMC1.tecnica} onChange={handleRandomMC1Change} name="tecnica" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">F</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={randomObjectMC2.flow} onChange={handleRandomMC2Change} name="flow" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={randomObjectMC1.flow} onChange={handleRandomMC1Change} name="flow" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">E</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={randomObjectMC2.escena} onChange={handleRandomMC2Change} name="escena" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={randomObjectMC1.escena} onChange={handleRandomMC1Change} name="escena" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2 font-medium">Total</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={Object.values(randomObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) as number} />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={Object.values(randomObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) as number} />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+      </div>}
+      {freeMinutesFormat1 && <div className="3 flex flex-col gap-1 sm:col-span-8 sm:row-start-2 sm:row-end-3 sm:flex sm:flex-row"> {/* Minuto 1 */}
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P1</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre1ObjectMC1.patron1} onChange={handleMinutoLibre1MC1Change} name="patron1" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre1ObjectMC2.patron1} onChange={handleMinutoLibre1MC2Change} name="patron1" />
+          <input className="hidden sm:visible sm:block" type="checkbox" checked={checkboxValuesMC2.respuesta1} onChange={handleCheckboxChangeMC2} name="respuesta1" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P2</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre1ObjectMC1.patron2} onChange={handleMinutoLibre1MC1Change} name="patron2" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre1ObjectMC2.patron2} onChange={handleMinutoLibre1MC2Change} name="patron2" />
+          <input className="hidden sm:visible sm:block" type="checkbox" checked={checkboxValuesMC2.respuesta2} onChange={handleCheckboxChangeMC2} name="respuesta2" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P3</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre1ObjectMC1.patron3} onChange={handleMinutoLibre1MC1Change} name="patron3" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre1ObjectMC2.patron3} onChange={handleMinutoLibre1MC2Change} name="patron3" />
+          <input className="hidden sm:visible sm:block" type="checkbox" checked={checkboxValuesMC2.respuesta3} onChange={handleCheckboxChangeMC2} name="respuesta3" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P4</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre1ObjectMC1.patron4} onChange={handleMinutoLibre1MC1Change} name="patron4" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre1ObjectMC2.patron4} onChange={handleMinutoLibre1MC2Change} name="patron4" />
+          <input className="hidden sm:visible sm:block" type="checkbox" checked={checkboxValuesMC2.respuesta4} onChange={handleCheckboxChangeMC2} name="respuesta4" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P5</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre1ObjectMC1.patron5} onChange={handleMinutoLibre1MC1Change} name="patron5" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre1ObjectMC2.patron5} onChange={handleMinutoLibre1MC2Change} name="patron5" />
+          <input className="hidden sm:visible sm:block" type="checkbox" checked={checkboxValuesMC2.respuesta5} onChange={handleCheckboxChangeMC2} name="respuesta5" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P6</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre1ObjectMC1.patron6} onChange={handleMinutoLibre1MC1Change} name="patron6" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre1ObjectMC2.patron6} onChange={handleMinutoLibre1MC2Change} name="patron6" />
+          <input className="hidden sm:visible sm:block" type="checkbox" checked={checkboxValuesMC2.respuesta6} onChange={handleCheckboxChangeMC2} name="respuesta6" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">T</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre1ObjectMC1.tecnica} onChange={handleMinutoLibre1MC1Change} name="tecnica" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre1ObjectMC2.tecnica} onChange={handleMinutoLibre1MC2Change} name="tecnica" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">F</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre1ObjectMC1.flow} onChange={handleMinutoLibre1MC1Change} name="flow" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre1ObjectMC2.flow} onChange={handleMinutoLibre1MC2Change} name="flow" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">E</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre1ObjectMC1.escena} onChange={handleMinutoLibre1MC1Change} name="escena" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre1ObjectMC2.escena} onChange={handleMinutoLibre1MC2Change} name="escena" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2 font-medium">Total</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={Object.values(minutoLibre1ObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) as number} />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={Object.values(minutoLibre1ObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) as number + Object.values(checkboxValuesMC2).reduce((total: number, value) => total + (value ? 1 : 0), 0) as number} />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+      </div>}
+      {freeMinutesFormat2 && <div className="3 flex flex-col gap-1 sm:col-span-8 sm:row-start-2 sm:row-end-3 sm:flex sm:flex-row"> {/* Minuto 2 */}
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P1</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre2ObjectMC2.patron1} onChange={handleMinutoLibre2MC2Change} name="patron1" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre2ObjectMC1.patron1} onChange={handleMinutoLibre2MC1Change} name="patron1" />
+          <input className="hidden sm:visible sm:block" type="checkbox" checked={checkboxValuesMC1.respuesta1} onChange={handleCheckboxChangeMC1} name="respuesta1" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P2</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre2ObjectMC2.patron2} onChange={handleMinutoLibre2MC2Change} name="patron2" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre2ObjectMC1.patron2} onChange={handleMinutoLibre2MC1Change} name="patron2" />
+          <input className="hidden sm:visible sm:block" type="checkbox" checked={checkboxValuesMC1.respuesta2} onChange={handleCheckboxChangeMC1} name="respuesta2" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P3</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre2ObjectMC2.patron3} onChange={handleMinutoLibre2MC2Change} name="patron3" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre2ObjectMC1.patron3} onChange={handleMinutoLibre2MC1Change} name="patron3" />
+          <input className="hidden sm:visible sm:block" type="checkbox" checked={checkboxValuesMC1.respuesta3} onChange={handleCheckboxChangeMC1} name="respuesta3" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P4</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre2ObjectMC2.patron4} onChange={handleMinutoLibre2MC2Change} name="patron4" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre2ObjectMC1.patron4} onChange={handleMinutoLibre2MC1Change} name="patron4" />
+          <input className="hidden sm:visible sm:block" type="checkbox" checked={checkboxValuesMC1.respuesta4} onChange={handleCheckboxChangeMC1} name="respuesta4" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P5</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre2ObjectMC2.patron5} onChange={handleMinutoLibre2MC2Change} name="patron5" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre2ObjectMC1.patron5} onChange={handleMinutoLibre2MC1Change} name="patron5" />
+          <input className="hidden sm:visible sm:block" type="checkbox" checked={checkboxValuesMC1.respuesta5} onChange={handleCheckboxChangeMC1} name="respuesta5" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P6</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre2ObjectMC2.patron6} onChange={handleMinutoLibre2MC2Change} name="patron6" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre2ObjectMC1.patron6} onChange={handleMinutoLibre2MC1Change} name="patron6" />
+          <input className="hidden sm:visible sm:block" type="checkbox" checked={checkboxValuesMC1.respuesta6} onChange={handleCheckboxChangeMC1} name="respuesta6" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">T</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre2ObjectMC2.tecnica} onChange={handleMinutoLibre2MC2Change} name="tecnica" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre2ObjectMC1.tecnica} onChange={handleMinutoLibre2MC1Change} name="tecnica" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">F</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre2ObjectMC2.flow} onChange={handleMinutoLibre2MC2Change} name="flow" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre2ObjectMC1.flow} onChange={handleMinutoLibre2MC1Change} name="flow" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">E</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre2ObjectMC2.escena} onChange={handleMinutoLibre2MC2Change} name="escena" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={minutoLibre2ObjectMC1.escena} onChange={handleMinutoLibre2MC1Change} name="escena" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2 font-medium">Total</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={Object.values(minutoLibre2ObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) as number} />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={Object.values(minutoLibre2ObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) as number + Object.values(checkboxValuesMC1).reduce((total: number, value) => total + (value ? 1 : 0), 0) as number} />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+      </div>}
+      {deluxeFormat && <div className="3 flex flex-col gap-1 sm:col-span-8 sm:row-start-2 sm:row-end-3 sm:flex sm:flex-row"> {/* Deluxe 2 */}
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">A1</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={deluxeObjectMC1.acapela1} onChange={handleDeluxeMC1Change} name="acapela1" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={deluxeObjectMC2.acapela1} onChange={handleDeluxeMC2Change} name="acapela1" />
+          <input className="hidden" type="checkbox" checked={checkboxValuesMC1.respuesta1} onChange={handleCheckboxChangeMC2} name="respuesta1" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">A2</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={deluxeObjectMC1.acapela2} onChange={handleDeluxeMC1Change} name="acapela2" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={deluxeObjectMC2.acapela2} onChange={handleDeluxeMC2Change} name="acapela2" />
+          <input className="hidden" type="checkbox" checked={checkboxValuesMC1.respuesta1} onChange={handleCheckboxChangeMC2} name="respuesta1" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">A3</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={deluxeObjectMC1.acapela3} onChange={handleDeluxeMC1Change} name="acapela3" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={deluxeObjectMC2.acapela3} onChange={handleDeluxeMC2Change} name="acapela3" />
+          <input className="hidden" type="checkbox" checked={checkboxValuesMC1.respuesta1} onChange={handleCheckboxChangeMC2} name="respuesta1" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P1</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={deluxeObjectMC1.patron1} onChange={handleDeluxeMC1Change} name="patron1" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={deluxeObjectMC2.patron1} onChange={handleDeluxeMC2Change} name="patron1" />
+          <input className="hidden" type="checkbox" checked={checkboxValuesMC1.respuesta1} onChange={handleCheckboxChangeMC2} name="respuesta1" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P2</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={deluxeObjectMC1.patron2} onChange={handleDeluxeMC1Change} name="patron2" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={deluxeObjectMC2.patron2} onChange={handleDeluxeMC2Change} name="patron2" />
+          <input className="hidden" type="checkbox" checked={checkboxValuesMC1.respuesta2} onChange={handleCheckboxChangeMC2} name="respuesta2" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P3</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={deluxeObjectMC1.patron3} onChange={handleDeluxeMC1Change} name="patron3" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={deluxeObjectMC2.patron3} onChange={handleDeluxeMC2Change} name="patron3" />
+          <input className="hidden" type="checkbox" checked={checkboxValuesMC1.respuesta3} onChange={handleCheckboxChangeMC2} name="respuesta3" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P4</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={deluxeObjectMC1.patron4} onChange={handleDeluxeMC1Change} name="patron4" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={deluxeObjectMC2.patron4} onChange={handleDeluxeMC2Change} name="patron4" />
+          <input className="hidden" type="checkbox" checked={checkboxValuesMC1.respuesta4} onChange={handleCheckboxChangeMC2} name="respuesta4" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P5</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={deluxeObjectMC1.patron5} onChange={handleDeluxeMC1Change} name="patron5" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={deluxeObjectMC2.patron5} onChange={handleDeluxeMC2Change} name="patron5" />
+          <input className="hidden" type="checkbox" checked={checkboxValuesMC1.respuesta5} onChange={handleCheckboxChangeMC2} name="respuesta5" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P6</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={deluxeObjectMC1.patron6} onChange={handleDeluxeMC1Change} name="patron6" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={deluxeObjectMC2.patron6} onChange={handleDeluxeMC2Change} name="patron6" />
+          <input className="hidden" type="checkbox" checked={checkboxValuesMC1.respuesta6} onChange={handleCheckboxChangeMC2} name="respuesta6" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">T</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={deluxeObjectMC1.tecnica} onChange={handleDeluxeMC1Change} name="tecnica" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={deluxeObjectMC2.tecnica} onChange={handleDeluxeMC2Change} name="tecnica" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">F</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={deluxeObjectMC1.flow} onChange={handleDeluxeMC1Change} name="flow" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={deluxeObjectMC2.flow} onChange={handleDeluxeMC2Change} name="flow" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">E</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={deluxeObjectMC1.escena} onChange={handleDeluxeMC1Change} name="escena" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={deluxeObjectMC2.escena} onChange={handleDeluxeMC2Change} name="escena" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2 font-medium">Total</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={Object.values(deluxeObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) as number} />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={Object.values(deluxeObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) as number} />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+      </div>}
+      {ganadorFormat && <div className="3 flex flex-col gap-1 sm:col-span-8 sm:row-start-2 sm:row-end-3 sm:flex sm:flex-row sm:gap-4 sm:text-center"> {/* Replica */}
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">I</p>
+          <input className="w-full basis-5/12 text-center sm:w-12 sm:basis-1/4" type="number" value={Object.values(incrementalObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) as number} />
+          <input className="w-full basis-5/12 text-center sm:w-12 sm:basis-1/4" type="number" value={Object.values(incrementalObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) as number} />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">R</p>
+          <input className="w-full basis-5/12 text-center sm:w-12 sm:basis-1/4" type="number" value={Object.values(randomObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) as number} />
+          <input className="w-full basis-5/12 text-center sm:w-12 sm:basis-1/4" type="number" value={Object.values(randomObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) as number} />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">M1</p>
+          <input className="w-full basis-5/12 text-center sm:w-12 sm:basis-1/4" type="number" value={Object.values(minutoLibre1ObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) as number} />
+          <input className="w-full basis-5/12 text-center sm:w-12 sm:basis-1/4" type="number" value={Object.values(minutoLibre1ObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) as number} />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">M2</p>
+          <input className="w-full basis-5/12 text-center sm:w-12 sm:basis-1/4" type="number" value={Object.values(minutoLibre2ObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) as number} />
+          <input className="w-full basis-5/12 text-center sm:w-12 sm:basis-1/4" type="number" value={Object.values(minutoLibre2ObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) as number} />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">D</p>
+          <input className="w-full basis-5/12 text-center sm:w-12 sm:basis-1/4" type="number" value={Object.values(deluxeObjectMC1).reduce((a, b) => Number(a) + Number(b), 0) as number} />
+          <input className="w-full basis-5/12 text-center sm:w-12 sm:basis-1/4" type="number" value={Object.values(deluxeObjectMC2).reduce((a, b) => Number(a) + Number(b), 0) as number} />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2 font-medium">Total</p>
+          <input className="w-full basis-5/12 text-center sm:w-12 sm:basis-1/4" type="number" value={resultadoFinalMC1} />
+          <input className="w-full basis-5/12 text-center sm:w-12 sm:basis-1/4" type="number" value={resultadoFinalMC2} />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+      </div>}
+      {replicaFormat && <div className="3 flex flex-col gap-1 sm:col-span-8 sm:row-start-2 sm:row-end-3 sm:flex sm:flex-row"> {/* Replica */}
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P1</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={replicaObjectMC2.patron1} onChange={handleReplicaMC2Change} name="patron1" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={replicaObjectMC1.patron1} onChange={handleReplicaMC1Change} name="patron1" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P2</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={replicaObjectMC2.patron2} onChange={handleReplicaMC2Change} name="patron2" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={replicaObjectMC1.patron2} onChange={handleReplicaMC1Change} name="patron2" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P3</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={replicaObjectMC2.patron3} onChange={handleReplicaMC2Change} name="patron3" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={replicaObjectMC1.patron3} onChange={handleReplicaMC1Change} name="patron3" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P4</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={replicaObjectMC2.patron4} onChange={handleReplicaMC2Change} name="patron4" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={replicaObjectMC1.patron4} onChange={handleReplicaMC1Change} name="patron4" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P5</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={replicaObjectMC2.patron5} onChange={handleReplicaMC2Change} name="patron5" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={replicaObjectMC1.patron5} onChange={handleReplicaMC1Change} name="patron5" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">P6</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={replicaObjectMC2.patron6} onChange={handleReplicaMC2Change} name="patron6" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={replicaObjectMC1.patron6} onChange={handleReplicaMC1Change} name="patron6" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">T</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={replicaObjectMC2.tecnica} onChange={handleReplicaMC2Change} name="tecnica" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={replicaObjectMC1.tecnica} onChange={handleReplicaMC1Change} name="tecnica" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">F</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={replicaObjectMC2.flow} onChange={handleReplicaMC2Change} name="flow" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={replicaObjectMC1.flow} onChange={handleReplicaMC1Change} name="flow" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2">E</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={replicaObjectMC2.escena} onChange={handleReplicaMC2Change} name="escena" />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={replicaObjectMC1.escena} onChange={handleReplicaMC1Change} name="escena" />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+        <div className="1 flex flex-row justify-between items-center gap-5 sm:flex sm:flex-col sm:gap-1 sm:justify-start">
+          <p className="basis-[12%] text-xs sm:mb-2 font-medium">Total</p>
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={Object.values(replicaObjectMC2).reduce((a: number, b) => Number(a) + Number(b), 0) as number} />
+          <input className="w-full basis-5/12 text-center sm:w-8 sm:basis-1/4" type="number" value={Object.values(replicaObjectMC1).reduce((a: number, b) => Number(a) + Number(b), 0) as number} />
+          <input className="hidden" value="5" type="checkbox" name="" id="" />
+        </div>
+      </div>}
+      <div className="4 flex flex-row  gap-0.5 sm:col-span-8 sm:col-start-5 sm:row-start-3 sm:row-end-4"> {/* Formatos */}
+        <button className={`w-full py-1 rounded-md border  ${incrementalFormat ? "bg-violet-400" : "bg-white"}`} onClick={clickIncremental}>I</button>
+        <button className={`w-full py-1 rounded-md border  ${randomModeFormat ? "bg-violet-400" : "bg-white"}`} onClick={clickRandomMode}>R</button>
+        <button className={`w-full py-1 rounded-md border  ${freeMinutesFormat1 ? "bg-violet-400" : "bg-white"}`} onClick={clickFreeMinutes1}>M1</button>
+        <button className={`w-full py-1 rounded-md border  ${freeMinutesFormat2 ? "bg-violet-400" : "bg-white"}`} onClick={clickFreeMinutes2}>M2</button>
+        <button className={`w-full py-1 rounded-md border ${deluxeFormat ? "bg-violet-400" : "bg-white"}`} onClick={clickDeluxe}>D</button>
+        <button className={`w-full py-1 rounded-md border px-3 ${ganadorFormat ? "bg-violet-400" : "bg-white"}`} onClick={clickGanador}>Ganador</button>
+        <button className={`w-full py-1 rounded-md border ${replicaFormat ? "bg-violet-400" : "bg-white"}`} onClick={clickReplica}>R</button>
+      </div>
+      <div className="5 flex flex-row justify-between items-center sm:col-span-12 sm:justify-end sm:gap-32">
+        <p>{formatoTitle}</p>
+        <button onClick={handleSubmit} className="h-9 rounded-md bg-violet-700 px-3 text-white">Guardar Batalla</button>
+      </div>
+      {showModal ? (
+        <>
+          <div
+            className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+          >
+            <div className="relative w-auto my-6 mx-auto max-w-3xl">
+              {/*content*/}
+              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                {/*header*/}
+                <div className="flex items-center justify-center p-5 border-b border-solid border-slate-200 rounded-t">
+                  <p className="text-xl font-semibold">
+                    ¿Estás seguro de guardar la batalla?
                   </p>
-                </div> */}
-                  {/*footer*/}
-                  <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-                    <button
-                      className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                      type="button"
-                      onClick={() => setShowModal(false)}
-                    >
-                      Close
-                    </button>
-                    <button
-                      className="bg-violet-700 text-white font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                      type="button"
-                      onClick={saveBattle}
-                    >
-                      Guardar Batalla
-                    </button>
-                  </div>
+                </div>
+                {/*body*/}
+                {/* <div className="relative p-6 flex-auto">
+              <p className="my-4 text-slate-500 text-lg leading-relaxed">
+                I always felt like I could do anything. That’s the main
+                thing people are controlled by! Thoughts- their perception
+                of themselves! They're slowed down by their perception of
+                themselves. If you're taught you can’t do anything, you
+                won’t do anything. I was taught I could do everything.
+              </p>
+            </div> */}
+                {/*footer*/}
+                <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+                  <button
+                    className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                    type="button"
+                    onClick={() => setShowModal(false)}
+                  >
+                    Close
+                  </button>
+                  <button
+                    className="bg-violet-700 text-white font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                    type="button"
+                    onClick={saveBattle}
+                  >
+                    Guardar Batalla
+                  </button>
                 </div>
               </div>
             </div>
-            <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-          </>
-        ) : null} {/*End Modal*/}
-      </div>
+          </div>
+          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+        </>
+      ) : null} {/*End Modal*/}
     </section>
-
   )
 }
+
+

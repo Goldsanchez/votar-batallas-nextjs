@@ -38,9 +38,9 @@ export default function ResultsBattle() {
 
   return (
     <article className="RESULTADO-BATALLAS rounded-lg basis-1/2 bg-white px-5 pt-5">
-      <div className="mb-6 flex flex-col items-center justify-between rounded-md bg-zinc-200 px-5 py-2">
-        <h3 className="text-2xl">Últimas Batallas Votadas</h3>
-        <p className="text-xs font-light">* Ganador por replica</p>
+      <div className="mb-6 flex flex-col items-center justify-between rounded-md bg-violet-200 px-5 py-2">
+        <h3 className="text-xl font-semibold text-violet-700">Últimas Batallas Votadas</h3>
+        <p className="text-xs">* Ganador por replica</p>
       </div>
 
       {battles.filter((battle:any) => battle.judge.id === user).map((battle: any) => <OneResultBattle key={battle.id}

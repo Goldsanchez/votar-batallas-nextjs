@@ -1,17 +1,17 @@
 export type PatronType = {
-  patron1: number;
-  patron2: number;
-  patron3: number;
-  patron4: number;
-  patron5: number;
-  patron6: number;
-  tecnica: number;
-  flow: number;
-  escena: number;
+  patron1: string;
+  patron2: string;
+  patron3: string;
+  patron4: string;
+  patron5: string;
+  patron6: string;
+  tecnica: string;
+  flow: string;
+  escena: string;
 }
 
 export type DeluxeType = PatronType & {
-  acapela1:number;
-  acapela2:number;
-  acapela3:number;
+  acapela1:string;
+  acapela2:string;
+  acapela3:string;
 }
