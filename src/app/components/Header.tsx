@@ -5,9 +5,10 @@ import { API_URL } from "../api/battles.api";
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon, MicrophoneIcon } from '@heroicons/react/24/outline'
-
+import "../../../public/discord-invitation.png"
 
 const navigation:any[] = [
+  { name: 'Discord', href: 'https://discord.gg/ME3arFjVH7', current: true },
   // { name: 'Home', href: '#', current: true },
   // { name: 'Team', href: '#', current: false },
   // { name: 'Projects', href: '#', current: false },
@@ -55,7 +56,7 @@ export default function Header({isAuth, setIsAuth}:any) {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between sm:mr-5">
                 <div className="flex flex-shrink-0 items-center">
                   <MicrophoneIcon className="h-7 w-7 text-violet-700" />
                   <h3 className="font-medium text-lg ml-2">Votar Batallas</h3>
@@ -71,6 +72,7 @@ export default function Header({isAuth, setIsAuth}:any) {
                           'rounded-md px-3 py-2 text-sm font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
+                        target="_blank"
                       >
                         {item.name}
                       </a>
@@ -88,6 +90,7 @@ export default function Header({isAuth, setIsAuth}:any) {
                 </button> */}
 
                 {/* Profile dropdown */}
+               
                 <Menu as="div" className="relative ml-3">
                   <div>
                     <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
