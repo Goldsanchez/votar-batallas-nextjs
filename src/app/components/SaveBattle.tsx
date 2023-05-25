@@ -515,7 +515,7 @@ export default function SaveBattle({isAuth, setIsAuth}:any) {
   }
   const clickReplica = () => {
 
-    if ( (resultadoFinalMC1 - resultadoFinalMC2 > 0 &&  resultadoFinalMC1 - resultadoFinalMC2 < 2) || (resultadoFinalMC2 - resultadoFinalMC1 > 0 && resultadoFinalMC2 - resultadoFinalMC1 < 2)) {
+    if ( (resultadoFinalMC1 - resultadoFinalMC2 >= 0 &&  resultadoFinalMC1 - resultadoFinalMC2 < 2) || (resultadoFinalMC2 - resultadoFinalMC1 >= 0 && resultadoFinalMC2 - resultadoFinalMC1 < 2)) {
       setFormatoTitle("Replica")
       setIncrementalFormat(false)
       setRandomModeFormat(false)
