@@ -36,13 +36,23 @@ export default function LeaderBoardTableRow({ battles }:any) {
 
       }
 
-      if (score_freestyler_1 > score_freestyler_2) {
-        scores[freestyler_1.aka] += 2;
-        scores[freestyler_2.aka] += 1;
-      } else if (score_freestyler_2 > score_freestyler_1) {
-        scores[freestyler_2.aka] += 2;
-        scores[freestyler_1.aka] += 1;
+      scores[freestyler_1.aka] += 2;
+      scores[freestyler_2.aka] += 1;
+    }
+
+    if (winner_replica.aka === freestyler_2.aka) {
+      if (!scores[freestyler_1.aka]) {
+        scores[freestyler_1.aka] = 0
+
       }
+
+      if (!scores[freestyler_2.aka]) {
+        scores[freestyler_2.aka] = 0
+
+      }
+
+      scores[freestyler_2.aka] += 2;
+      scores[freestyler_1.aka] += 1;
     }
   })
 
