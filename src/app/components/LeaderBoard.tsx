@@ -30,8 +30,10 @@ export default function LeaderBoard() {
 
   const tokenLocal = getToken()
 
-
-  const user = token?.filter((item:any) => item.key === tokenLocal).map((x:any) => x.user)[0]
+ 
+  const user = tokenLocal == undefined ? 3 : token?.filter((item:any) => item.key === tokenLocal).map((x:any) => x.user)[0]
+  console.log("object");
+  console.log(user);
 
   return (
     <article className="LEADERBOARD flex basis-1/2 flex-col gap-5 rounded-lg bg-white px-5  pt-5">
