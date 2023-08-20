@@ -9,7 +9,7 @@ export default function LeaderBoard() {
   const [battles, setBattles] = useState([])
   const [competition, setCompetition] = useState([])
   const [token, setToken] = useState([])
-  const [filterCompeticion, setFilterCompetition] = useState("FMS España")
+  const [filterCompeticion, setFilterCompetition] = useState("FMS Argentina")
 
   useEffect(() => {
 
@@ -31,9 +31,7 @@ export default function LeaderBoard() {
   const tokenLocal = getToken()
 
  
-  const user = tokenLocal == undefined ? 3 : token?.filter((item:any) => item.key === tokenLocal).map((x:any) => x.user)[0]
-  console.log("object");
-  console.log(user);
+  const user = tokenLocal == undefined ? 2 : token?.filter((item:any) => item.key === tokenLocal).map((x:any) => x.user)[0]
 
   return (
     <article className="LEADERBOARD flex basis-1/2 flex-col gap-5 rounded-lg bg-white px-5  pt-5">

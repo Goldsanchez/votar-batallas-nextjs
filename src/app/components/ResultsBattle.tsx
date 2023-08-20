@@ -9,7 +9,7 @@ export default function ResultsBattle() {
   const [token, setToken] = useState([])
   const [start, setStart] = useState(0)
   const [end, setEnd] = useState(6)
-  const user = tokenLocal == undefined ? 3 : token?.filter((item:any) => item.key === tokenLocal).map((x:any) => x.user)[0]
+  const user = tokenLocal == undefined ? 2 : token?.filter((item:any) => item.key === tokenLocal).map((x:any) => x.user)[0]
 
   useEffect(() => {
 

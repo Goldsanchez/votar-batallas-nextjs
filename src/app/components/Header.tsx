@@ -5,6 +5,7 @@ import { API_URL } from "../api/battles.api";
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon, MicrophoneIcon } from '@heroicons/react/24/outline'
+import { HeaderCompetition } from "./HeaderCompetitions";
 import "../../../public/discord-invitation.png"
 
 const navigation:any[] = [
